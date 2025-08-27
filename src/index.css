@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
+@import "tailwindcss";
+
+@theme {
+    --color-salmon: #FE8B7C;
+    --color-yellow: #FDC344;
+    --color-white: #FFFFFF;
+    --color-neutral-0: #F8FAFB;
+    --color-neutral-100: #DFE1E7;
+    --color-neutral-300: #A4ACB9;
+    --color-neutral-600: #36394A;
+    --color-neutral-900: #111827;
+
+    --font-heading: "Funnel Display", sans-serif;
+    --font-sans: "Sora", sans-serif;
+}
