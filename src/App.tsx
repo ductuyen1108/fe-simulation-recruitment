@@ -1,9 +1,10 @@
-import Alert from "./common/components/Alert"
+import Home from './pages/home'
 
 function App() {
-
   return (
-    <div className="h-screen w-screen flex items-center justify-center"><Alert /></div>
+    <div className='w-screen h-screen'>
+      <Home />
+    </div>
   )
 }
 

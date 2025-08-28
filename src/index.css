@@ -7,6 +7,8 @@
     --color-yellow: #FDC344;
     --color-white: #FFFFFF;
     --color-neutral-0: #F8FAFB;
+    --color-neutral-25: #F6F8FA;
+    --color-neutral-50: #ECEFF3;
     --color-neutral-100: #DFE1E7;
     --color-neutral-300: #A4ACB9;
     --color-neutral-600: #36394A;
@@ -14,4 +16,10 @@
 
     --font-heading: "Funnel Display", sans-serif;
     --font-sans: "Sora", sans-serif;
+
+    --breakpoint-sm: 640px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1024px;
+    --breakpoint-xl: 1280px;
+    --breakpoint-2xl: 1536px;
 }
