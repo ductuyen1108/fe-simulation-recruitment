@@ -1,12 +1,12 @@
-import Header from '../components/header/Header'
+import { Outlet } from 'react-router-dom'
+import Header from '../components/header'
 import Footer from '../components/Footer'
-import type { ReactNode } from 'react'
 
-const RootLayout = ({ children }: { children: ReactNode }) => {
+const RootLayout = () => {
   return (
     <div>
       <Header />
-      {children}
+      <Outlet />
       <Footer />
     </div>
   )

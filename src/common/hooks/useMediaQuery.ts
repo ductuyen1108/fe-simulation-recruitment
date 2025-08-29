@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 
-
 const breakpoints = {
   sm: 640,
   md: 768,
@@ -10,18 +9,25 @@ const breakpoints = {
 };
 
 export function useMediaQuery() {
-  const [screen, setScreen] = useState<'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | 'base'>('base')
+  const [matches, setMatches] = useState({
+    isSm: false,
+    isMd: false,
+    isLg: false,
+    isXl: false,
+    is2xl: false,
+  });
 
   useEffect(() => {
     function checkScreen() {
       const width = window.innerWidth;
-      if (width >= breakpoints["2xl"]) setScreen("2xl");
-      else if (width >= breakpoints.xl) setScreen("xl");
-      else if (width >= breakpoints.lg) setScreen("lg");
-      else if (width >= breakpoints.md) setScreen("md");
-      else if (width >= breakpoints.sm) setScreen("sm");
-      else if (width < breakpoints.sm) setScreen("xs");
-      else setScreen("base");
+
+      setMatches({
+        isSm: width >= breakpoints.sm,
+        isMd: width >= breakpoints.md,
+        isLg: width >= breakpoints.lg,
+        isXl: width >= breakpoints.xl,
+        is2xl: width >= breakpoints["2xl"],
+      });
     }
 
     checkScreen();
@@ -29,5 +35,5 @@ export function useMediaQuery() {
     return () => window.removeEventListener("resize", checkScreen);
   }, []);
 
-  return screen;
+  return matches;
 }

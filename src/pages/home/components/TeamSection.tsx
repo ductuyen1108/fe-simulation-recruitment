@@ -4,10 +4,10 @@ import Button from '../../../common/components/Button'
 
 const TeamSection = () => {
   return (
-    <div className='w-screen py-6 md:py-18'>
+    <div className='py-[100px] md:py-18'>
       <Container>
         <div className='w-full grid grid-cols-1 md:grid-cols-2 items-center justify-between'>
-          <div className='space-y-6 max-w-[560px]'>
+          <div className='flex flex-col items-center justify-center md:items-start md:justify-start gap-6 max-w-[560px] order-2 md:order-none'>
             <div className='flex flex-col gap-5'>
               <span className='text-yellow font-sans'>チーム</span>
               <h2 className='text-4xl md:text-5xl text-[#050505] font-heading font-semibold'>他人を理解する</h2>
@@ -26,7 +26,7 @@ const TeamSection = () => {
           <img
             src='/assets/home/team_illustration.svg'
             alt='team_illustration'
-            className='max-w-[550px] w-full h-auto'
+            className='max-w-[550px] w-full h-auto order-1 md:order-none'
           />
         </div>
       </Container>

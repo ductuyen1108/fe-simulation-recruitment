@@ -1,8 +1,18 @@
-import { createBrowserRouter } from 'react-router-dom'
+import { useRoutes } from 'react-router-dom'
+import RootLayout from '../layouts/RootLayout'
+import Home from '../../pages/home'
 
-export const router = createBrowserRouter([
-  {
-    path: '/',
-    element: {}
-  }
-])
+export default function Router() {
+  return useRoutes([
+    {
+      path: '',
+      element: <RootLayout />,
+      children: [
+        {
+          path: '/',
+          element: <Home />
+        }
+      ]
+    }
+  ])
+}
