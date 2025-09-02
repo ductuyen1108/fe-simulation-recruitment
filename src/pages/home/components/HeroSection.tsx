@@ -1,26 +1,27 @@
-import React from 'react'
-import Button from '../../../common/components/Button'
+import Button from '@/common/components/Button'
 import { ArrowRight } from 'iconsax-reactjs'
-import Container from '../../../common/components/Container'
+import Container from '@/common/components/Container'
 
 const HeroSection = () => {
   return (
     <div className='py-6 md:py-18'>
       <Container>
         <div className='w-full mx-auto md:px-0 grid grid-cols-1 md:grid-cols-5 md:grid-rows-3 md:auto-rows-auto gap-6 md:gap-[60px]'>
-          <div className='space-y-8 col-span-1 md:col-span-2 md:row-span-3 order-2 md:order-none'>
-            <h1 className='text-4xl md:text-5xl font-semibold'>「やっと自分のことを理解してもらえました」</h1>
-            <p className='text-[14px] md:text-[16px] text-neutral-600 font-sans leading-5 md:leading-6'>
-              たった10分で、自分がどんな人間か、自らの態度や行動の理由について、不思議なくらい正確な説明を手に入れられます。
-            </p>
-            <Button
-              background='primary'
-              variant='contained'
-              className='flex items-center gap-3 rounded-[36px] px-6 py-2'
-            >
-              性格タイプ
-              <ArrowRight size='32' />
-            </Button>
+          <div className='md:space-y-25 col-span-1 md:col-span-2 md:row-span-3 order-2 md:order-none'>
+            <div className='flex flex-col justify-center md:justify-normal items-center md:items-start space-y-8'>
+              <h1 className='text-4xl md:text-5xl font-semibold'>「やっと自分のことを理解してもらえました」</h1>
+              <p className='text-[14px] md:text-[16px] text-neutral-600 font-sans leading-5 md:leading-6'>
+                たった10分で、自分がどんな人間か、自らの態度や行動の理由について、不思議なくらい正確な説明を手に入れられます。
+              </p>
+              <Button
+                background='primary'
+                variant='contained'
+                className='flex items-center gap-3 rounded-[36px] px-6 py-2 w-fit'
+              >
+                性格タイプ
+                <ArrowRight size='32' />
+              </Button>
+            </div>
             <div className='hidden md:flex md:items-end bg-[url(/assets/home/hero-illustration2.svg)] bg-no-repeat bg-contain w-full h-[250px]'>
               <div className='flex items-center gap-2'>
                 <span className='text-[#FDC345] text-xl font-heading'>91.2%</span>

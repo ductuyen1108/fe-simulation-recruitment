@@ -1,6 +1,5 @@
-import React from 'react'
-import Button from '../../../common/components/Button'
-import Container from '../../../common/components/Container'
+import Button from '@/common/components/Button'
+import Container from '@/common/components/Container'
 
 const PersonalitySection = () => {
   return (

@@ -1,6 +1,7 @@
-import React, { useMemo, useState } from 'react'
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import { ArrowLeft2, ArrowRight2 } from 'iconsax-reactjs'
 import { userFeedbacks } from '../constants'
+import { useMediaQuery } from '@/common/hooks/useMediaQuery'
 
 type UserFeedbackItemProps = {
   color: string
@@ -13,7 +14,7 @@ type UserFeedbackItemProps = {
 const UserFeedbackItem = ({ color, avatarUrl, name, position, description }: UserFeedbackItemProps) => {
   return (
     <div
-      className={'w-full md:w-[270px] flex flex-col gap-3 p-4 border-t-2 rounded-[8px] bg-white'}
+      className={'w-full md:w-[275px] flex flex-col gap-3 p-4 border-t-2 rounded-[8px] bg-white'}
       style={{ borderTopColor: color }}
     >
       <div className='flex items-center gap-3 h-14'>
@@ -38,27 +39,108 @@ const UserFeedbackItem = ({ color, avatarUrl, name, position, description }: Use
   )
 }
 
-const UserFeedbacksSection = () => {
-  const [currentIndex, setCurrentIndex] = useState(0)
+const MOBILE_PAGE_SIZE = 5
+const DESKTOP_STEP = 2
 
+const UserFeedbacksSection = () => {
+  const { isMd } = useMediaQuery()
   const total = userFeedbacks.length
-  const itemsPerView = useMemo(() => Math.min(5, total), [total])
-  const maxIndex = Math.max(0, total - itemsPerView)
+
+  const wrapperRef = useRef<HTMLDivElement | null>(null)
+  const firstItemRef = useRef<HTMLDivElement | null>(null)
+
+  const [itemWidthPx, setItemWidthPx] = useState<number>(0)
+  const [visibleWidthPx, setVisibleWidthPx] = useState<number>(0)
+  const [currentIndex, setCurrentIndex] = useState<number>(0)
+
+  const pagesCount = useMemo(() => Math.ceil(total / MOBILE_PAGE_SIZE), [total])
+
+  useLayoutEffect(() => {
+    function measure() {
+      const wrapper = wrapperRef.current
+      const first = firstItemRef.current
+      const vw = wrapper ? wrapper.clientWidth : Math.min(window.innerWidth, 1480)
+      setVisibleWidthPx(vw)
+
+      if (first) {
+        setItemWidthPx(first.offsetWidth)
+      } else {
+        setItemWidthPx(275 + 16)
+      }
+    }
+
+    measure()
+    window.addEventListener('resize', measure)
+    return () => window.removeEventListener('resize', measure)
+  }, [isMd, total])
+
+  useEffect(() => {
+    if (isMd) {
+      const visibleSlots = itemWidthPx > 0 ? Math.max(1, Math.floor(visibleWidthPx / itemWidthPx)) : Math.min(5, total)
+      const maxIndexDesktop = Math.max(0, total - visibleSlots)
+      setCurrentIndex((prev) => Math.min(prev, maxIndexDesktop))
+    } else {
+      setCurrentIndex((prev) => Math.min(prev, Math.max(0, pagesCount - 1)))
+    }
+  }, [isMd, itemWidthPx, visibleWidthPx, pagesCount, total])
+
+  const handleNext = () => {
+    if (isMd) {
+      const visibleSlots = itemWidthPx > 0 ? Math.max(1, Math.floor(visibleWidthPx / itemWidthPx)) : Math.min(5, total)
+      const maxIndexDesktop = Math.max(0, total - visibleSlots)
+      setCurrentIndex((i) => Math.min(i + DESKTOP_STEP, maxIndexDesktop))
+    } else {
+      setCurrentIndex((i) => Math.min(i + 1, pagesCount - 1))
+    }
+  }
+
+  const handlePrev = () => {
+    if (isMd) {
+      setCurrentIndex((i) => Math.max(i - DESKTOP_STEP, 0))
+    } else {
+      setCurrentIndex((i) => Math.max(i - 1, 0))
+    }
+  }
 
   const canPrev = currentIndex > 0
-  const canNext = currentIndex < maxIndex
+  const canNext = isMd
+    ? (() => {
+        const visibleSlots =
+          itemWidthPx > 0 ? Math.max(1, Math.floor(visibleWidthPx / itemWidthPx)) : Math.min(5, total)
+        const maxIndexDesktop = Math.max(0, total - visibleSlots)
+        return currentIndex < maxIndexDesktop
+      })()
+    : currentIndex < pagesCount - 1
 
-  const next = () => {
-    if (!canNext) return
-    setCurrentIndex((i) => Math.min(i + 1, maxIndex))
-  }
+  const desktopTranslateX = useMemo(() => {
+    if (!isMd) return 0
+    const raw = currentIndex * itemWidthPx
+    const maxTranslate = Math.max(0, total * itemWidthPx - visibleWidthPx)
+    return Math.min(raw, maxTranslate)
+  }, [isMd, currentIndex, itemWidthPx, total, visibleWidthPx])
 
-  const prev = () => {
-    if (!canPrev) return
-    setCurrentIndex((i) => Math.max(i - 1, 0))
-  }
+  const mobileTranslatePercent = useMemo(() => {
+    if (isMd) return 0
+    if (pagesCount <= 1) return 0
 
-  const translatePercent = (currentIndex * 100) / itemsPerView
+    // Nếu đang ở page cuối thì tính theo số item còn lại
+    if (currentIndex === pagesCount - 1) {
+      const lastPageItemCount = total % MOBILE_PAGE_SIZE || MOBILE_PAGE_SIZE
+      return ((total - lastPageItemCount) / total) * 100
+    }
+
+    return ((currentIndex * MOBILE_PAGE_SIZE) / total) * 100
+  }, [isMd, currentIndex, total, pagesCount])
+
+  const mobilePages = useMemo(() => {
+    if (isMd) return []
+    const pages: (typeof userFeedbacks)[] = []
+    for (let p = 0; p < pagesCount; p++) {
+      pages.push(userFeedbacks.slice(p * MOBILE_PAGE_SIZE, p * MOBILE_PAGE_SIZE + MOBILE_PAGE_SIZE))
+    }
+    return pages
+  }, [pagesCount, isMd])
+
   return (
     <div className='bg-[#F8F8F8] rounded-[40px] py-12 px-4 flex flex-col justify-center items-center gap-8'>
       <div className='flex flex-col items-center justify-center gap-2'>
@@ -66,22 +148,55 @@ const UserFeedbacksSection = () => {
         <span className='text-xs text-yellow font-sans font-semibold'>証言</span>
         <h2 className='text-[30px] md:text-4xl text-neutral-600 font-heading font-semibold'>他の人の意見を見る</h2>
       </div>
+
       <div className='flex flex-col gap-4 justify-center items-center w-full'>
-        <div className='overflow-hidden w-full max-w-[1400px]'>
-          <div
-            className='flex transition-transform duration-500 ease-in-out'
-            style={{ transform: `translateX(-${translatePercent}%)` }}
-          >
-            {userFeedbacks.map((item) => (
-              <div key={item.name} className='px-2 flex-shrink-0' style={{ flexBasis: `calc(100% / ${itemsPerView})` }}>
-                <UserFeedbackItem {...item} />
-              </div>
-            ))}
-          </div>
+        <div
+          ref={wrapperRef}
+          className='overflow-hidden w-full'
+          style={{ maxWidth: '1480px', marginLeft: 'auto', marginRight: 'auto' }}
+        >
+          {isMd ? (
+            <div
+              className='flex transition-transform duration-500 ease-in-out'
+              style={{ transform: `translateX(-${desktopTranslateX}px)` }}
+            >
+              {userFeedbacks.map((item, index) => (
+                <div
+                  key={item.name + index}
+                  ref={index === 0 ? firstItemRef : undefined}
+                  className='px-2 flex-shrink-0'
+                >
+                  <UserFeedbackItem {...item} />
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div
+              className='flex transition-transform duration-500 ease-in-out'
+              style={{ width: `${mobilePages.length * 100}%`, transform: `translateX(-${mobileTranslatePercent}%)` }}
+            >
+              {mobilePages.map((pageItems, index) => (
+                <div
+                  key={`page-${index}`}
+                  className='px-2 flex-shrink-0'
+                  style={{ width: `${100 / mobilePages.length}%` }}
+                >
+                  <div className='flex flex-col gap-4'>
+                    {pageItems.map((item, index) => (
+                      <div key={item.name + index}>
+                        <UserFeedbackItem {...item} />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
+
         <div className='flex gap-2'>
           <button
-            onClick={prev}
+            onClick={handlePrev}
             disabled={!canPrev}
             className={`w-8 h-8 rounded-full flex items-center justify-center ${
               canPrev ? 'bg-white cursor-pointer' : 'bg-neutral-100 opacity-50'
@@ -90,7 +205,7 @@ const UserFeedbacksSection = () => {
             <ArrowLeft2 size='20' color='#818898' />
           </button>
           <button
-            onClick={next}
+            onClick={handleNext}
             disabled={!canNext}
             className={`w-8 h-8 rounded-full flex items-center justify-center ${
               canNext ? 'bg-white cursor-pointer' : 'bg-neutral-100 opacity-50'
