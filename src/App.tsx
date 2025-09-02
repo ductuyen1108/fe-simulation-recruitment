@@ -1,10 +1,11 @@
-import Home from './pages/home'
+import { BrowserRouter } from 'react-router-dom'
+import Router from '@/common/routes/AppRoutes'
 
 function App() {
   return (
-    <div className='w-screen h-screen'>
-      <Home />
-    </div>
+    <BrowserRouter>
+      <Router />
+    </BrowserRouter>
   )
 }
 

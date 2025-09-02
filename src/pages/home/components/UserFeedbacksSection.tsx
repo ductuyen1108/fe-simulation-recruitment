@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo, useState } from 'react'
 import { ArrowLeft2, ArrowRight2 } from 'iconsax-reactjs'
 import { userFeedbacks } from '../constants'
 
@@ -13,7 +13,7 @@ type UserFeedbackItemProps = {
 const UserFeedbackItem = ({ color, avatarUrl, name, position, description }: UserFeedbackItemProps) => {
   return (
     <div
-      className={'flex flex-col gap-3 p-4 border-t-2 rounded-[8px] bg-white md:max-w-[320px]'}
+      className={'w-full md:w-[270px] flex flex-col gap-3 p-4 border-t-2 rounded-[8px] bg-white'}
       style={{ borderTopColor: color }}
     >
       <div className='flex items-center gap-3 h-14'>
@@ -39,6 +39,26 @@ const UserFeedbackItem = ({ color, avatarUrl, name, position, description }: Use
 }
 
 const UserFeedbacksSection = () => {
+  const [currentIndex, setCurrentIndex] = useState(0)
+
+  const total = userFeedbacks.length
+  const itemsPerView = useMemo(() => Math.min(5, total), [total])
+  const maxIndex = Math.max(0, total - itemsPerView)
+
+  const canPrev = currentIndex > 0
+  const canNext = currentIndex < maxIndex
+
+  const next = () => {
+    if (!canNext) return
+    setCurrentIndex((i) => Math.min(i + 1, maxIndex))
+  }
+
+  const prev = () => {
+    if (!canPrev) return
+    setCurrentIndex((i) => Math.max(i - 1, 0))
+  }
+
+  const translatePercent = (currentIndex * 100) / itemsPerView
   return (
     <div className='bg-[#F8F8F8] rounded-[40px] py-12 px-4 flex flex-col justify-center items-center gap-8'>
       <div className='flex flex-col items-center justify-center gap-2'>
@@ -46,24 +66,36 @@ const UserFeedbacksSection = () => {
         <span className='text-xs text-yellow font-sans font-semibold'>証言</span>
         <h2 className='text-[30px] md:text-4xl text-neutral-600 font-heading font-semibold'>他の人の意見を見る</h2>
       </div>
-      <div className='flex flex-col gap-4 justify-center items-center'>
-        <div className='flex gap-2.5'>
-          {userFeedbacks.map((item) => (
-            <UserFeedbackItem
-              key={item.name}
-              color={item.color}
-              avatarUrl={item.avatarUrl}
-              name={item.name}
-              position={item.position}
-              description={item.description}
-            />
-          ))}
+      <div className='flex flex-col gap-4 justify-center items-center w-full'>
+        <div className='overflow-hidden w-full max-w-[1400px]'>
+          <div
+            className='flex transition-transform duration-500 ease-in-out'
+            style={{ transform: `translateX(-${translatePercent}%)` }}
+          >
+            {userFeedbacks.map((item) => (
+              <div key={item.name} className='px-2 flex-shrink-0' style={{ flexBasis: `calc(100% / ${itemsPerView})` }}>
+                <UserFeedbackItem {...item} />
+              </div>
+            ))}
+          </div>
         </div>
         <div className='flex gap-2'>
-          <button className='w-8 h-8 rounded-full bg-neutral-100 flex items-center justify-center'>
+          <button
+            onClick={prev}
+            disabled={!canPrev}
+            className={`w-8 h-8 rounded-full flex items-center justify-center ${
+              canPrev ? 'bg-white cursor-pointer' : 'bg-neutral-100 opacity-50'
+            }`}
+          >
             <ArrowLeft2 size='20' color='#818898' />
           </button>
-          <button className='w-8 h-8 rounded-full bg-white flex items-center justify-center'>
+          <button
+            onClick={next}
+            disabled={!canNext}
+            className={`w-8 h-8 rounded-full flex items-center justify-center ${
+              canNext ? 'bg-white cursor-pointer' : 'bg-neutral-100 opacity-50'
+            }`}
+          >
             <ArrowRight2 size='20' color='#818898' />
           </button>
         </div>

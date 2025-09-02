@@ -5,7 +5,7 @@ import Container from '../../../common/components/Container'
 
 const HeroSection = () => {
   return (
-    <div className='w-screen py-6 md:py-18'>
+    <div className='py-6 md:py-18'>
       <Container>
         <div className='w-full mx-auto md:px-0 grid grid-cols-1 md:grid-cols-5 md:grid-rows-3 md:auto-rows-auto gap-6 md:gap-[60px]'>
           <div className='space-y-8 col-span-1 md:col-span-2 md:row-span-3 order-2 md:order-none'>

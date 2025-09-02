@@ -1,14 +1,11 @@
-import React from 'react'
-import HeroSection from './components/HeroSection'
-import PersonalitySection from './components/PersonalitySection'
-import TeamSection from './components/TeamSection'
-import UserFeedbacksSection from './components/UserFeedbacksSection'
-import Header from '../../common/components/header'
+import HeroSection from '@/pages/home/components/HeroSection'
+import PersonalitySection from '@/pages/home/components/PersonalitySection'
+import TeamSection from '@/pages/home/components/TeamSection'
+import UserFeedbacksSection from '@/pages/home/components/UserFeedbacksSection'
 
 const Home = () => {
   return (
     <main>
-      <Header />
       <HeroSection />
       <PersonalitySection />
       <TeamSection />
