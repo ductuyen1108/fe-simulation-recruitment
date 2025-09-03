@@ -123,7 +123,6 @@ const UserFeedbacksSection = () => {
     if (isMd) return 0
     if (pagesCount <= 1) return 0
 
-    // Nếu đang ở page cuối thì tính theo số item còn lại
     if (currentIndex === pagesCount - 1) {
       const lastPageItemCount = total % MOBILE_PAGE_SIZE || MOBILE_PAGE_SIZE
       return ((total - lastPageItemCount) / total) * 100

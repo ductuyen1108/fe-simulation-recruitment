@@ -2,24 +2,49 @@
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
 @import "tailwindcss";
 
+@import "swiper/css";
+@import "swiper/css/pagination";
+@import "swiper/css/navigation";
+@import "swiper/css/scrollbar";
+@import "swiper/css/effect-coverflow";
+
 @theme {
-    --color-salmon: #FE8B7C;
-    --color-yellow: #FDC344;
-    --color-white: #FFFFFF;
-    --color-neutral-0: #F8FAFB;
-    --color-neutral-25: #F6F8FA;
-    --color-neutral-50: #ECEFF3;
-    --color-neutral-100: #DFE1E7;
-    --color-neutral-300: #A4ACB9;
-    --color-neutral-600: #36394A;
-    --color-neutral-900: #111827;
 
-    --font-heading: "Funnel Display", sans-serif;
-    --font-sans: "Sora", sans-serif;
+  /* Colors */
+  --color-salmon: #FE8B7C;
+  --color-yellow: #FDC344;
+  --color-white: #FFFFFF;
+  --color-neutral-0: #F8FAFB;
+  --color-neutral-25: #F6F8FA;
+  --color-neutral-50: #ECEFF3;
+  --color-neutral-100: #DFE1E7;
+  --color-neutral-200: #C1C7D0;
+  --color-neutral-300: #A4ACB9;
+  --color-neutral-400: #818898;
+  --color-neutral-600: #36394A;
+  --color-neutral-900: #111827;
 
-    --breakpoint-sm: 640px;
-    --breakpoint-md: 768px;
-    --breakpoint-lg: 1024px;
-    --breakpoint-xl: 1280px;
-    --breakpoint-2xl: 1536px;
+  /* Font family */
+  --font-heading: "Funnel Display", sans-serif;
+  --font-sans: "Sora", sans-serif;
+  
+  /* Breakpoints */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+
+  /* Animation */
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  --animate-fade-in: fade-in 0.3s ease-out forwards;
 }

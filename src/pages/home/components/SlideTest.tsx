@@ -1,0 +1,71 @@
+import React from 'react'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Navigation } from 'swiper/modules'
+import { userFeedbacks } from '../constants'
+
+type UserFeedbackItemProps = {
+  color: string
+  avatarUrl: string
+  name: string
+  position: string
+  description: string
+}
+
+const UserFeedbackItem = ({ color, avatarUrl, name, position, description }: UserFeedbackItemProps) => {
+  return (
+    <div
+      className={'w-full md:w-[275px] flex flex-col gap-3 p-4 border-t-2 rounded-[8px] bg-white'}
+      style={{ borderTopColor: color }}
+    >
+      <div className='flex items-center gap-3 h-14'>
+        <div className='relative pl-2'>
+          <img src={avatarUrl} alt={name} className='w-[48px] h-[48px] rounded-full' />
+          <p
+            className='absolute bottom-[-10px] left-0 flex text-white text-[20px] justify-center w-6 h-6 rounded-full border-2 border-neutral-0'
+            style={{ backgroundColor: color }}
+          >
+            “
+          </p>
+        </div>
+        <div className='space-y-1'>
+          <span className='text-xs text-neutral-600 font-sans font-semibold'>{name}</span>
+          <p className='text-xs font-sans' style={{ color: color }}>
+            {position}
+          </p>
+        </div>
+      </div>
+      <p className='text-neutral-600 text-xs font-sans'>{description}</p>
+    </div>
+  )
+}
+
+const SlideTest = () => {
+  return (
+    <>
+      <div className='bg-[#F8F8F8] w-full rounded-[40px] py-12 px-4 flex flex-col justify-center items-center gap-8'>
+        <div className='flex flex-col items-center justify-center gap-2'>
+          <img src='/assets/home/user_feedbacks_illustration.svg' alt='quotes' className='w-[120px] h-auto' />
+          <span className='text-xs text-yellow font-sans font-semibold'>証言</span>
+          <h2 className='text-[30px] md:text-4xl text-neutral-600 font-heading font-semibold'>他の人の意見を見る</h2>
+        </div>
+        <Swiper
+          slidesPerView={5}
+          spaceBetween={'16px'}
+          navigation={{
+            enabled: true
+          }}
+          modules={[Navigation]}
+          className='max-w-[1480px]'
+        >
+          {userFeedbacks.map((item, index) => (
+            <SwiperSlide key={`${item}-${index}`}>
+              <UserFeedbackItem {...item} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+    </>
+  )
+}
+
+export default SlideTest

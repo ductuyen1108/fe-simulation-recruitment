@@ -1,14 +1,13 @@
-import { type ReactNode } from 'react'
+import type { ReactNode, ButtonHTMLAttributes } from 'react'
 import clsx from 'clsx'
 
 type ButtonBackground = 'primary' | 'secondary' | 'tertiary' | 'neutral'
 
 type ButtonProps = {
   children?: ReactNode
-  background: ButtonBackground
-  variant: 'contained' | 'outlined'
-  className?: string
-}
+  background?: ButtonBackground
+  variant?: 'contained' | 'outlined'
+} & ButtonHTMLAttributes<HTMLButtonElement>
 
 const backgroundStyles: Record<ButtonBackground, { contained: string; outlined: string }> = {
   primary: {
@@ -29,10 +28,11 @@ const backgroundStyles: Record<ButtonBackground, { contained: string; outlined: 
   }
 }
 
-const Button = ({ variant, background, children, className }: ButtonProps) => {
+const Button = ({ variant = 'contained', background = 'primary', children, className, ...props }: ButtonProps) => {
   return (
     <button
       className={clsx('font-heading font-semibold cursor-pointer', backgroundStyles[background][variant], className)}
+      {...props}
     >
       {children}
     </button>
