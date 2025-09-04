@@ -22,6 +22,7 @@
   --color-neutral-300: #A4ACB9;
   --color-neutral-400: #818898;
   --color-neutral-600: #36394A;
+  --color-neutral-800: #1A1B25;
   --color-neutral-900: #111827;
 
   /* Font family */
@@ -48,3 +49,5 @@
   }
   --animate-fade-in: fade-in 0.3s ease-out forwards;
 }
+
+@layer components {}
