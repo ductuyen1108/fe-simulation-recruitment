@@ -74,7 +74,7 @@ const PersonalityForm = () => {
 
       {/* Questions */}
       {visibleQuestions.map((q) => (
-        <div key={q.name}>
+        <div key={q.name} className='px-4'>
           <QuestItem title={q.title} name={q.name} control={control} />
         </div>
       ))}
@@ -107,11 +107,11 @@ const PersonalityForm = () => {
           </Button>
         </div>
       ) : (
-        <div className='flex justify-start'>
+        <div className='flex justify-start px-4 mx-auto w-full max-w-[820px]'>
           <Button
             type='button'
             onClick={handleNext}
-            className='px-4 py-2 rounded-[36px] w-fit flex items-center gap-2 font-sans'
+            className='px-4 py-2 rounded-[36px] w-full md:w-fit flex items-center justify-center gap-2 font-sans'
           >
             Next <ArrowRight size='24' />
           </Button>
