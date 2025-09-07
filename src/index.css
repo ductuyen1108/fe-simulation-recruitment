@@ -30,6 +30,11 @@
   --color-mbti-purple: #88619a;
   --color-mbti-red: #f25e62;
 
+  --color-system-success: #1C9C8C;
+  --color-system-alert: #FE4E52;
+  --color-system-warning: #E18528;
+  --color-system-info: #26A9F1;
+
   /* Font family */
   --font-heading: 'Funnel Display', sans-serif;
   --font-sans: 'Sora', sans-serif;
@@ -47,16 +52,20 @@
       opacity: 0;
       transform: scale(0.95);
     }
+
     100% {
       opacity: 1;
       transform: scale(1);
     }
   }
+
   --animate-fade-in: fade-in 0.3s ease-out forwards;
 }
 
 @layer components {
-  /* ---------- Contained ---------- */
+
+  /* Button  */
+  /* Contained */
   .btn-contained-primary {
     @apply text-white font-semibold hover:brightness-110 hover:shadow-lg;
     background: linear-gradient(270deg, #fe8b7c 0%, #fdc344 100%);
@@ -74,7 +83,7 @@
       linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
   }
 
-  /* ---------- Outlined ---------- */
+  /* Outlined */
   .btn-outlined-primary {
     @apply bg-neutral-0 text-neutral-600 font-semibold border border-neutral-300 hover:bg-neutral-50;
   }
@@ -90,13 +99,44 @@
       linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
   }
 
+  /* Border gradient */
+  .border-gradient {
+    @apply relative bg-white box-border;
+  }
+
+  .border-gradient::before {
+    content: '';
+    @apply absolute -top-[1.5px] -left-[1.5px] -right-[1.5px] -bottom-[1.5px] -z-10;
+    background-image: linear-gradient(270deg, #fe8b7c 0%, #fdc344 100%);
+    border-radius: inherit;
+  }
+
+  /* Circle border gradient */
   .circle {
     @apply relative rounded-full text-center p-1 box-border bg-white;
   }
 
   .circle::before {
     content: '';
-    @apply absolute rounded-full -top-[2px] -left-[2px] -right-[2px] -bottom-[2px] -z-10;
+    @apply absolute rounded-full -top-[2px] -left-[2px] -right-[2.5px] -bottom-[2.5px] -z-10;
     background-image: linear-gradient(270deg, #fe8b7c 0%, #fdc344 100%);
+  }
+
+  /* Radio */
+  .custom-radio {
+    @apply appearance-none w-5 h-5 rounded-full border border-neutral-200 hover:border-salmon hover:shadow-xl cursor-pointer relative transition-colors duration-400;
+  }
+
+  .custom-radio:checked {
+    @apply border-salmon bg-salmon;
+  }
+
+  .custom-radio::after {
+    content: '';
+    @apply w-2.5 h-2.5 rounded-full bg-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 scale-0 transition-transform duration-400 ease-out;
+  }
+
+  .custom-radio:checked::after {
+    @apply scale-100;
   }
 }

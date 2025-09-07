@@ -1,4 +1,4 @@
-import PersonalityResults from './components/PersonalityResults'
+import PersonalityResults from './components/personality-results'
 import HeroPTRSection from './components/HeroPTRSection'
 
 const PersonalityTestResult = () => {

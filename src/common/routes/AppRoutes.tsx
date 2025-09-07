@@ -3,6 +3,8 @@ import RootLayout from '@/common/layouts/RootLayout'
 import Home from '@/pages/home'
 import PersonalityTest from '@/pages/personality-test'
 import PersonalityTestResult from '@/pages/personality-test-result'
+import SuitabilityTest from '@/pages/suitability-test'
+import SuitabilityTestResult from '@/pages/suitability-test-result'
 
 export default function Router() {
   return useRoutes([
@@ -21,6 +23,14 @@ export default function Router() {
         {
           path: '/personality-test-result',
           element: <PersonalityTestResult />
+        },
+        {
+          path: '/suitability-test',
+          element: <SuitabilityTest />
+        },
+        {
+          path: '/suitability-test-result',
+          element: <SuitabilityTestResult />
         }
       ]
     }

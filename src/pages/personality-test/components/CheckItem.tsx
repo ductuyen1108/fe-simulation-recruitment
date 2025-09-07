@@ -24,11 +24,11 @@ const CheckItem = ({ name, value, checked, type, size = 'md', onChange }: CheckI
       <div
         className={clsx(
           'flex items-center justify-center rounded-full',
-          type === 'neutral' ? 'w-8 h-8' : sizeCheckItemMap[size],
+          sizeCheckItemMap[type === 'neutral' ? 'neutral' : size],
           checked ? 'bg-transparent' : 'bg-white'
         )}
       >
-        <svg width='37' height='36' viewBox='0 0 37 36' fill='none' xmlns='http://www.w3.org/2000/svg'>
+        <svg width='36' height='36' viewBox='0 0 36 36' fill='none' xmlns='http://www.w3.org/2000/svg'>
           <path
             d='M27.3798 13.4248L17.5998 23.2048C16.4448 24.3598 14.5548 24.3598 13.3998 23.2048L8.50975 18.3148'
             stroke='white'

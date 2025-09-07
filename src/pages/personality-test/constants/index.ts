@@ -9,9 +9,10 @@ export const optionsCheckItem = [
 ] as const
 
 export const sizeCheckItemMap = {
-  lg: 'w-[52px] h-[52px]',
-  md: 'w-[42px] h-[42px]',
-  xs: 'w-[36px] h-[36px]'
+  lg: 'w-[42px] h-[42px] sm:w-[48px] sm:h-[48px]',
+  md: 'w-[34px] h-[34px] sm:w-[38px] sm:h-[38px]',
+  xs: 'w-[28px] h-[28px] sm:w-[32px] sm:h-[32px]',
+  neutral: 'w-[22px] h-[22px] sm:w-7 sm:h-7'
 }
 
 export const bgTypeCheckItemMap = {
@@ -49,7 +50,10 @@ export const personalityQuestionList = [
   { name: 'q3', title: 'あなたは通常、事実に基づく議論よりも感情的に共鳴するものによって説得されるように感じます。' },
   { name: 'q4', title: '生活空間と仕事空間は清潔で整頓されています。' },
   { name: 'q5', title: 'あなたは、大きなプレッシャーを受けても、たいてい冷静さを保っています。' },
-  { name: 'q6', title: 'ネットワークを構築したり、見知らぬ人に自分を宣伝したりするのは非常に気が重いことだと思います。' },
+  {
+    name: 'q6',
+    title: 'ネットワークを構築したり、見知らぬ人に自分を宣伝したりするのは非常に気が重いことだと思います。'
+  },
   { name: 'q7', title: 'タスクの優先順位をつけて効果的に計画し、期限よりかなり前に完了することがよくあります。' },
   { name: 'q8', title: '人々の物語や感情は、数字やデータよりも雄弁に語りかけます。' },
   { name: 'q9', title: 'スケジュールやリストなどの整理ツールを使うのが好きです' },

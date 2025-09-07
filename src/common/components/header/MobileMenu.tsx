@@ -1,4 +1,3 @@
-import Button from '../Button'
 import { Global, HamburgerMenu } from 'iconsax-reactjs'
 import SearchButton from './SearchButton'
 import { useRef, useState } from 'react'
@@ -42,9 +41,12 @@ const MobileMenu = () => {
           </div>
         )}
       </div>
-      <Button className='p-2 rounded-3xl' onClick={() => setOpenDrawer(true)}>
+      <button
+        className='rounded-full p-2 cursor-pointer bg-gradient-to-r from-salmon to-yellow transition-all duration-150 ease-in-out active:translate-y-[2px] active:shadow-sm'
+        onClick={() => setOpenDrawer(true)}
+      >
         <HamburgerMenu size='24' color='#ffffff' />
-      </Button>
+      </button>
       <Drawer open={openDrawer} onClose={() => setOpenDrawer(false)} />
     </div>
   )

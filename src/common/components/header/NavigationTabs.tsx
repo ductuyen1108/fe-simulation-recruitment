@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 const tabs = [
   { label: '性格テスト', path: '/' },
   { label: '性格タイプ', path: '/personality-test' },
-  { label: '適性試験', path: '/suitabality-test' }
+  { label: '適性試験', path: '/suitability-test' }
 ]
 
 const NavigationTabs = () => {

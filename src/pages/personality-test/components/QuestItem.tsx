@@ -7,11 +7,13 @@ type QuestItemProps = {
   title: string
   name: string
   control: Control<any>
+  leftLable?: string
+  rightLabel?: string
 }
 
-const QuestItem = ({ title, name, control }: QuestItemProps) => {
+const QuestItem = ({ title, name, control, leftLable = 'Agree', rightLabel = 'Disagree' }: QuestItemProps) => {
   return (
-    <div className='flex flex-col gap-7 mx-auto w-fit '>
+    <div className='flex flex-col gap-7 mx-auto max-w-[820px] w-full'>
       <h2 className='font-sans font-semibold text-neutral-600'>{title}</h2>
       <div className='flex items-center gap-[42px] justify-center'>
         <Controller
@@ -22,9 +24,9 @@ const QuestItem = ({ title, name, control }: QuestItemProps) => {
             <div className='flex flex-col gap-2'>
               <div className='flex items-center gap-[42px] justify-center'>
                 <span className='hidden md:inline-block bg-linear-270 from-salmon to-yellow text-transparent bg-clip-text text-[14px] leading-5 font-sans'>
-                  Agree
+                  {leftLable}
                 </span>
-                <div className='flex items-center gap-4 md:gap-[40px]'>
+                <div className='flex items-center gap-3 sm:gap-[40px]'>
                   {optionsCheckItem.map((opt) => (
                     <CheckItem
                       key={opt.val}
@@ -37,13 +39,13 @@ const QuestItem = ({ title, name, control }: QuestItemProps) => {
                     />
                   ))}
                 </div>
-                <span className='hidden md:block text-[14px] leading-5 text-neutral-600 font-sans'>Disagree</span>
+                <span className='hidden md:block text-[14px] leading-5 text-neutral-600 font-sans'>{rightLabel}</span>
               </div>
               <div className='flex md:hidden justify-between items-center w-full'>
                 <p className='inline-block bg-linear-270 from-salmon to-yellow text-transparent bg-clip-text text-[14px] leading-5 font-sans'>
-                  Agree
+                  {leftLable}
                 </p>
-                <p className='text-[14px] leading-5 text-neutral-600 font-sans'>Disagree</p>
+                <p className='text-[14px] leading-5 text-neutral-600 font-sans'>{rightLabel}</p>
               </div>
             </div>
           )}

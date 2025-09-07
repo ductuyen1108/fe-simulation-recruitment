@@ -1,8 +1,12 @@
 import Button from '@/common/components/Button'
 import { Send2 } from 'iconsax-reactjs'
-import TraitBar from './TraitBar'
+import TraitBar from '../items/TraitBar'
+import type { RefElement } from '../../types'
 
-const PersonalityTraits = () => {
+const PersonalityTraits = ({ refElement }: RefElement) => {
+  const handleClick = () => {
+    if (refElement.current) refElement?.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
   return (
     <>
       <p className='text-[14px] leading-5 font-sans text-neutral-600'>
@@ -10,7 +14,7 @@ const PersonalityTraits = () => {
         <br />
         さらにコミュニケーションの面でも才能があるので、情熱と信念をもって先見の明のあるアイデアを明確に示し、他者を巻き込み、やる気を起こさせることができます。あなたは人との有意義なつながりを大切にするだけでなく、周りの人の長所を難なく引き出せるでしょう。ただし、理想主義的な気質があるので、現実があなたの高い期待にそぐわないと、落胆してしまうこともあります。
       </p>
-      <div className='space-y-6 py-6'>
+      <div className='space-y-6'>
         <div className='flex items-center gap-3'>
           <div className='circle w-10 h-10 flex items-center justify-center text-2xl font-heading text-neutral-600 font-semibold'>
             1
@@ -50,7 +54,10 @@ const PersonalityTraits = () => {
             <span className='text-xs text-neutral-600 font-sans font-semibold'>
               性格概要に移る前に、結果をあなたのメールアドレスに送りましょうか？
             </span>
-            <Button className='flex items-center gap-2 rounded-[36px] w-fit text-xs font-sans font-semibold'>
+            <Button
+              onClick={handleClick}
+              className='flex items-center gap-2 rounded-[36px] w-fit text-xs font-sans font-semibold'
+            >
               <Send2 size='16' /> 結果を送る
             </Button>
           </div>
