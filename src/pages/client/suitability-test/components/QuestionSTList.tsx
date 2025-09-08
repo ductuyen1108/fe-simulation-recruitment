@@ -1,10 +1,10 @@
-import QuestItem from '@/pages/personality-test/components/QuestItem'
+import QuestItem from '@/pages/client/personality-test/components/QuestItem'
 import { useForm } from 'react-hook-form'
 import Button from '@/common/components/Button'
 import { ArrowRight, ArrowLeft } from 'iconsax-reactjs'
 import { useState, useMemo, useRef, useEffect } from 'react'
 import { suitabilityQuestionList, QUESTIONS_PER_PAGE } from '../constants'
-import GenderRadioGroup from '@/pages/personality-test/components/GenderRadioGroup'
+import GenderRadioGroup from '@/pages/client/personality-test/components/GenderRadioGroup'
 
 type FormValues = Record<string, number>
 

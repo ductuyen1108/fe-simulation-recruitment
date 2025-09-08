@@ -16,7 +16,7 @@ const Button = ({ children, variant = 'contained', background = 'primary', class
   return (
     <button
       className={clsx(
-        'cursor-pointer px-4 py-2 transition-all duration-150 ease-in-out active:translate-y-[2px] active:shadow-sm',
+        'cursor-pointer transition-all duration-150 ease-in-out active:translate-y-[2px] active:shadow-sm',
         variantClass,
         className
       )}

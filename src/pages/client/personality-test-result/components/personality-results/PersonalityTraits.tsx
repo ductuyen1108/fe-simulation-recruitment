@@ -1,14 +1,12 @@
 import Button from '@/common/components/Button'
 import { Send2 } from 'iconsax-reactjs'
 import TraitBar from '../items/TraitBar'
-import type { RefElement } from '../../types'
+import { Element } from 'react-scroll'
 
-const PersonalityTraits = ({ refElement }: RefElement) => {
-  const handleClick = () => {
-    if (refElement.current) refElement?.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
-  }
+const PersonalityTraits = () => {
+  const handleClick = () => {}
   return (
-    <>
+    <Element name='personality-traits' className='space-y-6'>
       <p className='text-[14px] leading-5 font-sans text-neutral-600'>
         ENFJ（主人公）のあなたは、カリスマ性・共感力・理想主義という独特な気質の組み合わせを備えていて、どんな場面でも際立った存在感を示す傾向があります。他者を鼓舞し導く才能があり、周囲にプラスの影響を与えたいという強い願望を抱いているでしょう。また、あなたには人の感情や動機を不思議なほど正確に理解する能力があり、他者が必要としているものを、本人が気づく前に察知することもよくあります。
         <br />
@@ -56,7 +54,7 @@ const PersonalityTraits = ({ refElement }: RefElement) => {
             </span>
             <Button
               onClick={handleClick}
-              className='flex items-center gap-2 rounded-[36px] w-fit text-xs font-sans font-semibold'
+              className='flex items-center px-4 py-2 gap-2 rounded-[36px] w-fit text-xs font-sans font-semibold'
             >
               <Send2 size='16' /> 結果を送る
             </Button>
@@ -70,7 +68,7 @@ const PersonalityTraits = ({ refElement }: RefElement) => {
           </span>
         </div>
       </div>
-    </>
+    </Element>
   )
 }
 

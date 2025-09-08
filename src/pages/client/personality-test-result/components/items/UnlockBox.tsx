@@ -1,20 +1,15 @@
 import Button from '@/common/components/Button'
 import { Lock1 } from 'iconsax-reactjs'
 import type { ReactNode } from 'react'
+import { Link } from 'react-scroll'
 
 type UnlockBoxProps = {
   title: string
   description: string
   btnContent: ReactNode
-  scrollTargetRef?: React.RefObject<HTMLDivElement | null>
 }
 
-const UnlockBox = ({ title, description, btnContent, scrollTargetRef }: UnlockBoxProps) => {
-  const handleClick = () => {
-    if (scrollTargetRef?.current) {
-      scrollTargetRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    }
-  }
+const UnlockBox = ({ title, description, btnContent }: UnlockBoxProps) => {
   return (
     <div className='relative max-w-[485px] bg-white rounded-[8px]'>
       <div className='rounded-full absolute z-5 top-[-12px] left-1/2 -translate-x-1/2 bg-gradient-to-r from-salmon to-yellow text-white p-1.5'>
@@ -25,12 +20,11 @@ const UnlockBox = ({ title, description, btnContent, scrollTargetRef }: UnlockBo
         <div className='flex flex-col items-center justify-center gap-2.5'>
           <span className='text-xs font-sans font-semibold text-neutral-600'>{title}</span>
           <p className='text-xs text-center font-sans text-neutral-600'>{description}</p>
-          <Button
-            onClick={handleClick}
-            className='flex items-center gap-2 rounded-[36px] w-fit text-xs font-sans font-semibold'
-          >
-            {btnContent}
-          </Button>
+          <Link to={'unlock-all-results'} spy smooth offset={-100} duration={400} spyThrottle={100}>
+            <Button className='flex py-2 px-4 items-center gap-2 rounded-[36px] w-fit text-xs font-sans font-semibold'>
+              {btnContent}
+            </Button>
+          </Link>
         </div>
       </div>
     </div>

@@ -1,10 +1,12 @@
 import { useRoutes } from 'react-router-dom'
 import RootLayout from '@/common/layouts/RootLayout'
-import Home from '@/pages/home'
-import PersonalityTest from '@/pages/personality-test'
-import PersonalityTestResult from '@/pages/personality-test-result'
-import SuitabilityTest from '@/pages/suitability-test'
-import SuitabilityTestResult from '@/pages/suitability-test-result'
+import Home from '@/pages/client/home'
+import PersonalityTest from '@/pages/client/personality-test'
+import PersonalityTestResult from '@/pages/client/personality-test-result'
+import SuitabilityTest from '@/pages/client/suitability-test'
+import SuitabilityTestResult from '@/pages/client/suitability-test-result'
+import DashboardLayout from '../layouts/DashboardLayout'
+import ListMessages from '@/pages/admin/messages/list'
 
 export default function Router() {
   return useRoutes([
@@ -13,24 +15,34 @@ export default function Router() {
       element: <RootLayout />,
       children: [
         {
-          path: '/',
+          path: '',
           element: <Home />
         },
         {
-          path: '/personality-test',
+          path: 'personality-test',
           element: <PersonalityTest />
         },
         {
-          path: '/personality-test-result',
+          path: 'personality-test-result',
           element: <PersonalityTestResult />
         },
         {
-          path: '/suitability-test',
+          path: 'suitability-test',
           element: <SuitabilityTest />
         },
         {
-          path: '/suitability-test-result',
+          path: 'suitability-test-result',
           element: <SuitabilityTestResult />
+        }
+      ]
+    },
+    {
+      path: '/dashboard',
+      element: <DashboardLayout />,
+      children: [
+        {
+          path: 'message',
+          element: <ListMessages />
         }
       ]
     }

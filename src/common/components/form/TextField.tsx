@@ -29,12 +29,12 @@ export default function TextField({
         <input
           {...(register ? register(name) : {})}
           className={clsx(
-            'w-full border rounded-lg px-3 py-3 focus:outline-none placeholder-neutral-400 placeholder:text-xs text-xs',
+            'w-full border rounded-lg px-3 h-10 focus:outline-none placeholder-neutral-400 placeholder:text-xs text-xs',
             startIcon ? 'pl-10' : '',
             endIcon ? 'pr-10' : '',
             error
               ? 'border-red-500 focus:ring-1 focus:ring-red-500'
-              : 'border-neutral-200 focus:ring-1 focus:ring-orange-400 focus:border-orange-400',
+              : 'border-neutral-200 focus:ring-1 focus:ring-yellow focus:border-yellow',
             className
           )}
           {...props}
