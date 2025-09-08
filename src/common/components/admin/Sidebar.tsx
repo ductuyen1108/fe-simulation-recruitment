@@ -88,7 +88,7 @@ const Sidebar: React.FC = () => {
           {nav.subItems ? (
             <button onClick={() => handleSubmenuToggle(index)} className={`flex items-center w-full justify-between`}>
               {(isExpanded || isHovered || isMobileOpen) && (
-                <span className='text-[14px] leading-5 font-semibold font-sans text-neutral-600'>{nav.name}</span>
+                <span className='text-[14px] leading-5 font-semibold  text-neutral-600'>{nav.name}</span>
               )}
               {(isExpanded || isHovered || isMobileOpen) && (
                 <ArrowDown2

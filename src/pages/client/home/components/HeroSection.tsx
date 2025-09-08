@@ -10,7 +10,7 @@ const HeroSection = () => {
           <div className='md:space-y-25 col-span-1 md:col-span-2 md:row-span-3 order-2 md:order-none'>
             <div className='flex flex-col justify-center md:justify-normal items-center md:items-start space-y-8'>
               <h1 className='text-4xl md:text-5xl font-semibold'>「やっと自分のことを理解してもらえました」</h1>
-              <p className='text-[14px] md:text-[16px] text-neutral-600 font-sans leading-5 md:leading-6'>
+              <p className='text-[14px] md:text-[16px] text-neutral-600  leading-5 md:leading-6'>
                 たった10分で、自分がどんな人間か、自らの態度や行動の理由について、不思議なくらい正確な説明を手に入れられます。
               </p>
               <Button
@@ -24,8 +24,8 @@ const HeroSection = () => {
             </div>
             <div className='hidden md:flex md:items-end bg-[url(/assets/home/hero-illustration2.svg)] bg-no-repeat bg-contain w-full h-[250px]'>
               <div className='flex items-center gap-2'>
-                <span className='text-[#FDC345] text-xl font-heading'>91.2%</span>
-                <p className='text-neutral-500 text-xs font-sans'>正確または非常に正確であると評価された結果</p>
+                <h2 className='text-[#FDC345] text-xl '>91.2%</h2>
+                <p className='text-neutral-500 text-xs '>正確または非常に正確であると評価された結果</p>
               </div>
             </div>
           </div>
@@ -43,10 +43,10 @@ const HeroSection = () => {
                 >
                   <div className='w-full h-full rounded-[8px] py-5'>
                     <div className='flex flex-col gap-1 items-center justify-center'>
-                      <h2 className='bg-linear-270 from-salmon to-yellow inline-block text-transparent bg-clip-text text-2xl md:text-4xl font-heading font-semibold'>
+                      <h2 className='bg-linear-270 from-salmon to-yellow inline-block text-transparent bg-clip-text text-2xl md:text-4xl  font-semibold'>
                         112K+
                       </h2>
-                      <span className='text-xs text-neutral-500 font-sans'>今日受けたテスト</span>
+                      <span className='text-xs text-neutral-500 '>今日受けたテスト</span>
                     </div>
                   </div>
                 </div>

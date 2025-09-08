@@ -31,11 +31,11 @@ const MobileMenu = () => {
             <div className='absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#FE8B7C] to-[#FDC344]' />
             <ul className='flex flex-col justify-center items-center gap-2 px-3 pt-4 pb-3'>
               <li className='cursor-pointer hover:text-[#FE8B7C]'>
-                <p className='text-[14px] font-sans font-semibold'>ログアウト</p>
+                <p className='text-[14px]  font-semibold'>ログアウト</p>
               </li>
               <div className='h-[1px] bg-neutral-300 w-full' />
               <li className='cursor-pointer hover:text-[#FE8B7C]'>
-                <p className='text-[14px] font-sans font-semibold'>設定</p>
+                <p className='text-[14px]  font-semibold'>設定</p>
               </li>
             </ul>
           </div>

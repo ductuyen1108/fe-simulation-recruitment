@@ -50,7 +50,7 @@ export default function RadioGroupField<T extends FieldValues>({
                     onChange={(e) => field.onChange(e.target.value)}
                     onBlur={field.onBlur}
                   />
-                  <span className='text-[14px] leading-5 font-sans text-neutral-600'>{opt.label}</span>
+                  <span className='text-[14px] leading-5  text-neutral-600'>{opt.label}</span>
                 </label>
               )
             })}

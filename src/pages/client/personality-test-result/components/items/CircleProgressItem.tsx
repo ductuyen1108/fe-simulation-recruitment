@@ -110,7 +110,7 @@ const CircleProgressItem = ({
       </svg>
       {label && (
         <div className='flex flex-col md:flex-row items-center mt-3 gap-1' style={{ maxWidth: size }}>
-          <p className='text-xs font-sans font-semibold text-neutral-600'>{label}</p>
+          <p className='text-xs  font-semibold text-neutral-600'>{label}</p>
           <LockCircle className='text-neutral-600 w-4 h-4 shrink-0' />
         </div>
       )}

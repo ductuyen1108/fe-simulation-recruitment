@@ -1,5 +1,3 @@
-import React from 'react'
-
 const HeroSTSection = () => {
   return (
     <div className='mb-12'>
@@ -31,9 +29,9 @@ const HeroSTSection = () => {
         </svg>
         <div className='absolute w-full top-12 md:top-[100px] left-1/2 -translate-x-1/2  flex flex-col gap-[124px]'>
           <div className='flex flex-col justify-center items-center text-center gap-6'>
-            <span className='text-[18px] leading-7 text-neutral-800 font-sans font-semibold'>LOGO</span>
-            <h2 className='text-4xl text-neutral-600 font-heading font-semibold'>適性試験</h2>
-            <p className='text-[14px] leading-5 text-neutral-600 font-sans'>NERIS Type Explorer®</p>
+            <span className='text-[18px] leading-7 text-neutral-800  font-semibold'>LOGO</span>
+            <h2 className='text-4xl text-neutral-600  font-semibold'>適性試験</h2>
+            <p className='text-[14px] leading-5 text-neutral-600 '>NERIS Type Explorer®</p>
           </div>
         </div>
       </div>

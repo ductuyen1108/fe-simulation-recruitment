@@ -1,4 +1,3 @@
-import React from 'react'
 import HeroSTRSection from './components/HeroSTRSection'
 import SuitabilityResultContent from './components/SuitabilityResultContent'
 

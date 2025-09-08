@@ -45,7 +45,7 @@ function MessageRow({
     <li className='group relative'>
       <div className='flex items-center bg-[#FAFAFA]'>
         {/* Timeline */}
-        <div className='hidden md:flex text-xs text-neutral-600 font-sans items-center justify-center py-4 max-w-[250px] w-full border-b border-neutral-300'>
+        <div className='hidden md:flex text-xs text-neutral-600  items-center justify-center py-4 max-w-[250px] w-full border-b border-neutral-300'>
           {msg.sentAt}
         </div>
         {/* List chat */}
@@ -54,21 +54,17 @@ function MessageRow({
             <div className='flex flex-col'>
               <div className='flex items-center gap-2'>
                 <img src='/assets/avatars/nicole.svg' alt='' className='w-4 h-4 rounded-full' />
-                <span className='text-xs font-sans text-neutral-600 py-1 px-2 bg-neutral-50 rounded-[4px]'>
-                  {msg.content}
-                </span>
+                <span className='text-xs  text-neutral-600 py-1 px-2 bg-neutral-50 rounded-[4px]'>{msg.content}</span>
               </div>
-              <p className='md:hidden text-[8px] text-neutral-600 font-sans text-end mt-1'>{msg.sentAt}</p>
+              <p className='md:hidden text-[8px] text-neutral-600  text-end mt-1'>{msg.sentAt}</p>
             </div>
           ) : (
             <div className='flex flex-col'>
               <div className='flex items-center gap-2'>
-                <span className='text-xs font-sans text-neutral-600 py-1 px-2 bg-neutral-50 rounded-[4px]'>
-                  {msg.content}
-                </span>
+                <span className='text-xs  text-neutral-600 py-1 px-2 bg-neutral-50 rounded-[4px]'>{msg.content}</span>
                 <img src='/assets/icons/chatgpt.svg' alt='' className='w-4 h-4 rounded-full' />
               </div>
-              <p className='md:hidden text-[8px] text-neutral-600 font-sans text-start mt-1'>{msg.sentAt}</p>
+              <p className='md:hidden text-[8px] text-neutral-600  text-start mt-1'>{msg.sentAt}</p>
             </div>
           )}
         </div>

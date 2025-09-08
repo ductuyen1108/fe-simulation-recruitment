@@ -1,7 +1,6 @@
 import SelectField, { type SelectOption } from '@/common/components/form/Select'
 import TextField from '@/common/components/form/TextField'
 import { SearchNormal1 } from 'iconsax-reactjs'
-import React from 'react'
 import { useForm } from 'react-hook-form'
 
 const genderOptions: SelectOption[] = [
@@ -16,9 +15,9 @@ const HeaderListMessages = () => {
   })
   return (
     <div className='space-y-6'>
-      <h2 className='text-3xl font-heading font-semibold text-neutral-600'>メッセージ</h2>
+      <h2 className='text-3xl  font-semibold text-neutral-600'>メッセージ</h2>
       <div className='p-5 flex flex-col md:flex-row w-full gap-4'>
-        <div className='space-y-1 text-xs text-neutral-600 font-sans w-full md:w-[50%]'>
+        <div className='space-y-1 text-xs text-neutral-600  w-full md:w-[50%]'>
           <p>顧客名</p>
           <TextField
             className='w-full'

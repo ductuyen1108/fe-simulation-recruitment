@@ -36,13 +36,13 @@ const CareerPath = () => {
     <Element name='career-path'>
       <div className='space-y-6'>
         <div className='flex items-center gap-3'>
-          <div className='circle w-10 h-10 flex items-center justify-center text-2xl font-heading text-neutral-600 font-semibold'>
+          <div className='circle w-10 h-10 flex items-center justify-center text-2xl  text-neutral-600 font-semibold'>
             2
           </div>
-          <h2 className='text-[30px] text-neutral-600 font-heading font-semibold'>あなたのキャリアパス</h2>
+          <h2 className='text-[30px] text-neutral-600  font-semibold'>あなたのキャリアパス</h2>
         </div>
         <div className='space-y-3'>
-          <h2 className='text-xl font-heading font-semibold text-neutral-600'>影響力のある特性</h2>
+          <h2 className='text-xl  font-semibold text-neutral-600'>影響力のある特性</h2>
           <div className='flex flex-col items-center justify-center gap-6'>
             <div className='flex justify-center md:justify-between w-full md:max-w-[560px] gap-6 md:gap-0'>
               {itemsCircleProgress.map((it) => (

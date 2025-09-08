@@ -35,14 +35,14 @@ const Modal = ({ title, leftTitle, children, open, onClose }: ModalProps) => {
           }
         >
           <div className='absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#FE8B7C] to-[#FDC344]' />
-          <span
+          <h2
             className={clsx(
-              'text-xl text-neutral-600 font-semibold font-heading leading-[30px]',
+              'text-xl text-neutral-600 font-semibold  leading-[30px]',
               leftTitle ? 'text-left' : 'text-center'
             )}
           >
             {title}
-          </span>
+          </h2>
           <div onClick={onClose} className='absolute top-4 right-4 cursor-pointer'>
             <CloseCircle variant='Outline' size='24' color='#36394A' />
           </div>

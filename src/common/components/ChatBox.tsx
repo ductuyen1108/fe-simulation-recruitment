@@ -11,7 +11,7 @@ const ChatBox = () => {
           <div className='border-b-1 border-neutral-300 p-4 flex items-center justify-between'>
             <div className='flex items-center gap-2'>
               <img src='/assets/icons/chatgpt.svg' alt='chatgpt' className='w-6 h-6' />
-              <span className='text-xs text-neutral-600 font-sans font-semibold'>Chat GPT</span>
+              <span className='text-xs text-neutral-600  font-semibold'>Chat GPT</span>
             </div>
             <button
               className='w-6 h-6 rounded-full bg-neutral-50 flex items-center justify-center cursor-pointer'

@@ -39,10 +39,10 @@ const Drawer = ({ open, onClose }: DrawerProps) => {
           <Divider />
           {/* Client */}
           <>
-            <NavLink to='#' className='text-[14px leading-5 text-neutral-600 font-sans' onClick={onClose}>
+            <NavLink to='#' className='text-[14px leading-5 text-neutral-600 ' onClick={onClose}>
               性格タイプ
             </NavLink>
-            <NavLink to='#' className='text-[14px leading-5 text-neutral-600 font-sans' onClick={onClose}>
+            <NavLink to='#' className='text-[14px leading-5 text-neutral-600 ' onClick={onClose}>
               適性試験
             </NavLink>
           </>
@@ -50,23 +50,23 @@ const Drawer = ({ open, onClose }: DrawerProps) => {
           <>
             <Accordion title='質問を編集'>
               <div className='flex flex-col gap-2'>
-                <p className='text-[14px] leading-5 font-sans text-neutral-600'>性格タイプ</p>
-                <p className='text-[14px] leading-5 font-sans text-neutral-600'>適性試験</p>
+                <p className='text-[14px] leading-5  text-neutral-600'>性格タイプ</p>
+                <p className='text-[14px] leading-5  text-neutral-600'>適性試験</p>
               </div>
             </Accordion>
             <Divider />
             <Accordion title='診断オプションを変更する'>
               <div className='flex flex-col gap-2'>
-                <p className='text-[14px] leading-5 font-sans text-neutral-600'>性格タイプ</p>
-                <p className='text-[14px] leading-5 font-sans text-neutral-600'>適性試験</p>
+                <p className='text-[14px] leading-5  text-neutral-600'>性格タイプ</p>
+                <p className='text-[14px] leading-5  text-neutral-600'>適性試験</p>
               </div>
             </Accordion>
           </>
           <Divider />
-          <SearchButton text={<p className='text-[14px] leading-5 font-sans'>検索</p>} />
+          <SearchButton text={<p className='text-[14px] leading-5 '>検索</p>} />
           <Divider />
           <button
-            className='px-4 py-2 rounded-[36px] bg-[#F8FAFB] text-[14px] leading-5 font-sans border border-amber-400 cursor-pointer'
+            className='px-4 py-2 rounded-[36px] bg-[#F8FAFB] text-[14px] leading-5  border border-amber-400 cursor-pointer'
             onClick={onClose}
           >
             <p className='bg-linear-270 from-salmon to-yellow inline-block text-transparent bg-clip-text'>ログイン</p>

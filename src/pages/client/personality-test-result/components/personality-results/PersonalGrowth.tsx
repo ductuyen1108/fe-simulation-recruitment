@@ -36,17 +36,17 @@ const PersonalGrowth = () => {
     <Element name='personal-growth'>
       <div className='space-y-6'>
         <div className='flex items-center gap-3'>
-          <div className='circle w-10 h-10 flex items-center justify-center text-2xl font-heading text-neutral-600 font-semibold'>
+          <div className='circle w-10 h-10 flex items-center justify-center text-2xl  text-neutral-600 font-semibold'>
             3
           </div>
-          <h2 className='text-[30px] text-neutral-600 font-heading font-semibold'>あなたのキャリアパス</h2>
+          <h2 className='text-[30px] text-neutral-600  font-semibold'>あなたのキャリアパス</h2>
         </div>
-        <p className='text-[14px] leading-5 text-neutral-600 font-sans'>
+        <p className='text-[14px] leading-5 text-neutral-600 '>
           あなたの自己成長プロセスは、自己改善への飽くなき欲求と、「最高の自分になる」という心からのコミットメントに支えられています。自分の行動に高い基準を課し、厳しく自己批判することも少なくないでしょう。このような姿勢は目覚ましい自己啓発につながりますが、より現実に沿った期待を抱き、セルフコンパッションを実践して、バランスを取ることが大切です。
           あなたの成長に重要なのは、健全な境界線（バウンダリー）を引き、セルフケアを優先する習慣をつけることです。自分のニーズよりも他者のニーズを優先してしまう気質を放っておくと、燃え尽き症候群を引き起こしかねません。理想主義的な傾向を補うために実用的なスキルを身につけ、独りの時間と内省を大切にするようになれば、あなたの自己進化と全体的な幸福度は大きく改善するでしょう。
         </p>
         <div className='space-y-3'>
-          <h2 className='text-xl font-heading font-semibold text-neutral-600'>影響力のある特性</h2>
+          <h2 className='text-xl  font-semibold text-neutral-600'>影響力のある特性</h2>
           <div className='flex flex-col items-center justify-center gap-6'>
             <div className='flex justify-center md:justify-between w-full md:max-w-[560px] gap-6 md:gap-0'>
               {itemsCircleProgress.map((it) => (

@@ -10,7 +10,7 @@ const DesktopMenu = () => {
       <div className='relative'>
         <Button className='flex items-center gap-3 py-2 px-6 rounded-3xl'>
           <img src='/assets/icons/japan_rectangle.svg' alt='japan-flag' />
-          <span className='text-xl font-semibold text-white font-heading'>日本語</span>
+          <h2 className='text-xl font-semibold text-white '>日本語</h2>
         </Button>
       </div>
     </div>

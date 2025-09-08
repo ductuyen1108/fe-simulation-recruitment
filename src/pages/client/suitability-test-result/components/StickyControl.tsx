@@ -1,15 +1,14 @@
 import Button from '@/common/components/Button'
-import React from 'react'
 
 const StickyControl = () => {
   return (
     <div className='space-y-6 max-w-[290px] hidden md:block self-start md:sticky md:top-[80px]'>
       <div className='relative space-y-4 py-6 px-2 rounded-[8px] overflow-hidden bg-neutral-25'>
         <div className='absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#FE8B7C] to-[#FDC344]' />
-        <p className='text-xs text-neutral-600 font-sans'>
+        <p className='text-xs text-neutral-600 '>
           結果を保存して保管したり、電子メールで送信したり、印刷したりできます。
         </p>
-        <Button className='rounded-[36px] w-full text-xs font-sans font-semibold'>レポートを保存</Button>
+        <Button className='rounded-[36px] px-4 py-2 w-full text-xs  font-semibold'>レポートを保存</Button>
       </div>
       <div className='relative space-y-4 py-6 px-2 rounded-[8px] overflow-hidden bg-neutral-25'>
         <div className='absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#FE8B7C] to-[#FDC344]' />
@@ -26,7 +25,7 @@ const StickyControl = () => {
             </p>
           </div>
         </div>
-        <Button className='rounded-[36px] w-full text-xs font-sans font-semibold'>レポートを保存</Button>
+        <Button className='rounded-[36px] px-4 py-2 w-full text-xs  font-semibold'>レポートを保存</Button>
       </div>
     </div>
   )

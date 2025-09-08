@@ -17,7 +17,7 @@ const Accordion = ({ title, children, defaultOpen = false }: AccordionProps) => 
         className='w-full flex justify-between items-center text-left cursor-pointer'
         onClick={() => setOpen(!open)}
       >
-        <span className='text-[14px] leading-5 font-sans font-semibold text-neutral-600'>{title}</span>
+        <span className='text-[14px] leading-5  font-semibold text-neutral-600'>{title}</span>
         <ArrowDown2
           size={20}
           className={clsx('transition-transform duration-300', open && 'rotate-180')}

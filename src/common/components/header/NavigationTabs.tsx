@@ -1,4 +1,5 @@
-import { NavLink } from 'react-router-dom'
+import { useMemo } from 'react'
+import { NavLink, useLocation } from 'react-router-dom'
 
 const tabs = [
   { label: '性格テスト', path: '/' },
@@ -7,10 +8,17 @@ const tabs = [
 ]
 
 const NavigationTabs = () => {
+  const location = useLocation()
+  const pathname = location.pathname
+
+  const activeTab = useMemo(() => {
+    const matches = tabs.filter((t) => (t.path === '/' ? pathname === '/' : pathname.startsWith(t.path)))
+    return matches.sort((a, b) => b.path.length - a.path.length)[0] ?? tabs[0]
+  }, [pathname])
   return (
     <div className='hidden md:flex gap-6 items-center bg-neutral-25 shadow-[0px_4px_4px_0px_#5F5F5F0D] rounded-3xl absolute left-1/2 -translate-x-1/2'>
       {tabs.map((tab) => {
-        const isActive = location.pathname === tab.path
+        const isActive = tab.path === activeTab.path
         return (
           <NavLink
             key={tab.path}

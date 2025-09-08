@@ -16,12 +16,12 @@ const StepItem = ({ title, description, image, numberStep }: StepItemProps) => {
         <img src={image} alt={`step-${numberStep}-illustration`} />
       </div>
       <div className='space-y-1'>
-        <div className='uppercase text-white text-xs font-sans font-semibold py-0.5 px-2 rounded-3xl bg-linear-270 from-salmon to-yellow w-fit'>
+        <div className='uppercase text-white text-xs  font-semibold py-0.5 px-2 rounded-3xl bg-linear-270 from-salmon to-yellow w-fit'>
           Step {numberStep}
         </div>
-        <span className='text-neutral-600 font-sans font-semibold'>{title}</span>
+        <span className='text-neutral-600  font-semibold'>{title}</span>
       </div>
-      <p className='text-xs text-neutral-600 font-sans'>{description}</p>
+      <p className='text-xs text-neutral-600 '>{description}</p>
     </div>
   )
 }
@@ -57,9 +57,9 @@ const HeroSection = () => {
         </svg>
         <div className='absolute w-full top-12 md:top-[100px] left-1/2 -translate-x-1/2  flex flex-col gap-[124px]'>
           <div className='flex flex-col justify-center items-center text-center gap-6'>
-            <span className='text-[18px] leading-7 text-neutral-800 font-sans font-semibold'>LOGO</span>
-            <h2 className='text-4xl text-neutral-600 font-heading font-semibold'>無料性格診断テスト</h2>
-            <p className='text-[14px] leading-5 text-neutral-600 font-sans'>NERIS Type Explorer®</p>
+            <span className='text-[18px] leading-7 text-neutral-800  font-semibold'>LOGO</span>
+            <h2 className='text-4xl text-neutral-600  font-semibold'>無料性格診断テスト</h2>
+            <p className='text-[14px] leading-5 text-neutral-600 '>NERIS Type Explorer®</p>
           </div>
         </div>
       </div>

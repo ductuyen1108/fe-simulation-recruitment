@@ -139,7 +139,7 @@ export default function AccordionTable<T>({
         </div>
       </div>
       <div className='flex items-center justify-between p-6'>
-        <p className='text-[14px] text-neutral-600 font-sans'>10ページ中1ページ目</p>
+        <p className='text-[14px] text-neutral-600 '>10ページ中1ページ目</p>
         <div className='flex items-center gap-3'>
           <Button variant='outlined' className='bg-neutral-100 px-3 py-1 rounded-md'>
             前に

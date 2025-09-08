@@ -43,8 +43,8 @@ const PersonalScores = ({
 
   return (
     <div className='space-y-4'>
-      <h2 className='text-xl text-neutral-600 font-semibold font-heading'>あなたの性格タイプ</h2>
-      <p className='text-[14px] leading-5 text-neutral-600 font-sans'>
+      <h2 className='text-xl text-neutral-600 font-semibold '>あなたの性格タイプ</h2>
+      <p className='text-[14px] leading-5 text-neutral-600 '>
         あなたは「<strong>芸術的</strong>」を最も好み、次いで「<strong>探究的</strong>」と「<strong>慣習的</strong>
         」でした。あなたの6文字の性格タイプは「<strong>AICESR</strong>
         」です。あなたの個人的な好みは、下のグラフにも示されています。
@@ -57,7 +57,7 @@ const PersonalScores = ({
           </div>
           <div className='border-gradient rounded-[8px] p-1 gap-1 flex flex-col items-center justify-center'>
             <img src='/assets/avatars/nicole.svg' alt='' className='w-9 h-9 rounded-full' />
-            <div className='text-xs font-sans text-neutral-600'>
+            <div className='text-xs  text-neutral-600'>
               <p>GENDER: FEMALE</p>
               <p>AGE: 24</p>
             </div>
@@ -65,7 +65,7 @@ const PersonalScores = ({
         </div>
         <div className='border-gradient rounded-[8px] p-4 flex items-center w-full'>
           <div className='space-y-2 w-full'>
-            <span className='text-xs font-semibold font-sans bg-linear-270 from-salmon to-yellow inline-block text-transparent bg-clip-text'>
+            <span className='text-xs font-semibold  bg-linear-270 from-salmon to-yellow inline-block text-transparent bg-clip-text'>
               PERSONAL SCORES
             </span>
             <div className='grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6'>
@@ -114,7 +114,7 @@ const PersonalScores = ({
                 {data.map((d) => (
                   <li key={d.key} className='flex items-center gap-3'>
                     <SliceIcon color={(COLORSCHART as any)[d.key]} />
-                    <div className='flex flex-col justify-start text-xs text-neutral-600 font-sans font-semibold'>
+                    <div className='flex flex-col justify-start text-xs text-neutral-600  font-semibold'>
                       <span className='text-[13px] md:text-[14px] font-medium text-neutral-800'>
                         {LABELS_JP[d.key as keyof typeof LABELS_JP]}
                       </span>

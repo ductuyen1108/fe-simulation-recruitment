@@ -5,8 +5,7 @@
 @import 'swiper/css';
 @import 'swiper/css/pagination';
 @import 'swiper/css/navigation';
-@import 'swiper/css/scrollbar';
-@import 'swiper/css/effect-coverflow';
+@import 'swiper/css/grid';
 
 @theme {
   /* Colors */
@@ -60,6 +59,21 @@
   }
 
   --animate-fade-in: fade-in 0.3s ease-out forwards;
+}
+
+@layer base {
+  html {
+    @apply font-sans;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading;
+  }
 }
 
 @layer components {

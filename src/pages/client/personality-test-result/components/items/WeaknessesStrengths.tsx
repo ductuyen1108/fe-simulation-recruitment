@@ -25,15 +25,15 @@ const WeaknessesStrengths = ({ heading, type, items, unlock = true, unlockConten
 
   return (
     <div className='relative space-y-3.5'>
-      <h2 className='text-xl text-neutral-600 font-heading font-semibold'>{heading}</h2>
+      <h2 className='text-xl text-neutral-600  font-semibold'>{heading}</h2>
       <div className={`${!unlock ? 'blur-xs pointer-events-none select-none' : ''}`}>
         <div className='grid md:grid-cols-2 gap-3.5'>
           {items.map((item) => (
             <div key={item.title} className='flex items-start gap-2'>
               {icon}
               <div className='space-y-1'>
-                <h3 className='font-semibold font-sans text-[14px] leading-5 text-neutral-600'>{item.title}</h3>
-                <p className='text-neutral-500 text-xs font-sans'>{item.description}</p>
+                <h3 className='font-semibold  text-[14px] leading-5 text-neutral-600'>{item.title}</h3>
+                <p className='text-neutral-500 text-xs '>{item.description}</p>
               </div>
             </div>
           ))}

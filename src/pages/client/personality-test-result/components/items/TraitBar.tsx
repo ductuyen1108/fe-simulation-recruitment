@@ -85,7 +85,7 @@ const TraitBar = ({ leftLabel, rightLabel, value, color = 'blue', align = 'left'
           <span
             className={clsx(
               'absolute -top-5 -translate-x-2/3 pointer-events-none whitespace-nowrap',
-              'flex gap-1 text-xs font-sans font-semibold text-neutral-600'
+              'flex gap-1 text-xs  font-semibold text-neutral-600'
             )}
             style={{ left: `${v}%` }}
           >
@@ -95,7 +95,7 @@ const TraitBar = ({ leftLabel, rightLabel, value, color = 'blue', align = 'left'
           <span
             className={clsx(
               'absolute -top-5 translate-x-2/3 pointer-events-none whitespace-nowrap',
-              'flex gap-1 text-xs font-sans font-semibold text-neutral-600'
+              'flex gap-1 text-xs  font-semibold text-neutral-600'
             )}
             style={{ right: `${v}%` }}
           >
@@ -103,7 +103,7 @@ const TraitBar = ({ leftLabel, rightLabel, value, color = 'blue', align = 'left'
           </span>
         )}
       </div>
-      <div className='flex justify-between text-xs text-neutral-600 font-sans mt-2'>
+      <div className='flex justify-between text-xs text-neutral-600  mt-2'>
         <span>{leftLabel}</span>
         <span>{rightLabel}</span>
       </div>

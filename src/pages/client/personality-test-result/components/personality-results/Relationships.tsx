@@ -36,18 +36,18 @@ const Relationships = () => {
     <Element name='relationships'>
       <div className='space-y-6'>
         <div className='flex items-center gap-3'>
-          <div className='circle w-10 h-10 flex items-center justify-center text-2xl font-heading text-neutral-600 font-semibold'>
+          <div className='circle w-10 h-10 flex items-center justify-center text-2xl  text-neutral-600 font-semibold'>
             4
           </div>
-          <h2 className='text-[30px] text-neutral-600 font-heading font-semibold'>あなたの人間関係</h2>
+          <h2 className='text-[30px] text-neutral-600  font-semibold'>あなたの人間関係</h2>
         </div>
-        <p className='text-[14px] leading-5 text-neutral-600 font-sans'>
+        <p className='text-[14px] leading-5 text-neutral-600 '>
           恋愛関係、家族関係、プラトニックな関係で、あなたはとても献身的かつ直感力があるパートナーとして輝く傾向があります。他者の感情的なニーズを理解し、それに応えることができるので、身近な人から秘密を打ち明けられたり、良き友人とみなされたりするでしょう。あなたには有意義で深いつながりを築き、他の人が安心して自分らしく振る舞えるような環境を育む才能があるのです。
           <br />
           しかし調和を保ちたいという願望と、過剰なまでに人に合わせようとする傾向のせいで、自分自身のニーズをないがしろにしてしまう場合もあります。人間関係において自分の欲求を伝えて、自分らしさを保つ習慣の構築のは、あなたの心の健康を維持するためには欠かせません。最も充実した人間関係とは、お互いが等しく大切にされ、理解されていると感じられる関係であることを忘れないでください。あなたの場合、人間関係の面では、生まれつき寛大な気質を大切にしながらも、善意やサポートを人から受けるようにすることが重要です。
         </p>
         <div className='space-y-3'>
-          <h2 className='text-xl font-heading font-semibold text-neutral-600'>影響力のある特性</h2>
+          <h2 className='text-xl  font-semibold text-neutral-600'>影響力のある特性</h2>
           <div className='flex flex-col items-center justify-center gap-6'>
             <div className='flex justify-center md:justify-between w-full md:max-w-[560px] gap-6 md:gap-0'>
               {itemsCircleProgress.map((it) => (

@@ -1,4 +1,3 @@
-import React from 'react'
 import PersonalScores from './PersonalScores'
 import TopCoreSkills from './TopCoreSkills'
 import SuitabilityResultItem from './items/SuitabilityResultItem'
@@ -8,8 +7,8 @@ const SuitabilityResultContent = () => {
   return (
     <div className='py-12 px-2 max-w-[980px] flex items-start justify-between mx-auto'>
       <div className='flex flex-col gap-6 max-w-[650px] w-full'>
-        <h2 className='text-3xl text-neutral-600 font-semibold font-heading'>レポート情報</h2>
-        <div className='gap-5 flex flex-col text-[14px] leading-5 text-neutral-600 font-sans'>
+        <h2 className='text-3xl text-neutral-600 font-semibold '>レポート情報</h2>
+        <div className='gap-5 flex flex-col text-[14px] leading-5 text-neutral-600 '>
           <p>
             このテストでは、特定の職業活動を描いた絵の中から選択する必要がありました。それぞれの絵は、特定の性格タイプに関連付けられた仕事を描いています。これらの性格タイプは、ジョン・ホランド博士のキャリアと職業選択理論、いわゆるホランド・コードに基づいています。
           </p>

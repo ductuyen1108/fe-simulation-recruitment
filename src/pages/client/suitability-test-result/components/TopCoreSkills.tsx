@@ -36,12 +36,12 @@ const TopCoreSkills = () => {
       />
       {topskills.map((item, index) => (
         <div key={item.skill} className='flex items-start gap-2'>
-          <p className='font-sans font-semibold text-neutral-600 mt-2'>{index + 1}.</p>
+          <p className=' font-semibold text-neutral-600 mt-2'>{index + 1}.</p>
           <div className='space-y-2'>
-            <div className='py-1.5 px-4 w-fit rounded-[36px] bg-gradient-to-r from-salmon to-yellow text-white text-xs font-sans font-semibold'>
+            <div className='py-1.5 px-4 w-fit rounded-[36px] bg-gradient-to-r from-salmon to-yellow text-white text-xs  font-semibold'>
               {item.skill}
             </div>
-            <p className='text-[14px] leading-5 font-sans text-neutral-600'>{item.description}</p>
+            <p className='text-[14px] leading-5  text-neutral-600'>{item.description}</p>
           </div>
         </div>
       ))}

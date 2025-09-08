@@ -10,8 +10,8 @@ const SuitabilityResultItem = ({ title, description, children }: SuitabilityResu
   return (
     <>
       <div className='space-y-3'>
-        <h2 className='text-xl text-neutral-600 font-semibold font-heading'>{title}</h2>
-        <p className='text-[14px] leading-5 text-neutral-600 font-sans'>{description}</p>
+        <h2 className='text-xl text-neutral-600 font-semibold '>{title}</h2>
+        <p className='text-[14px] leading-5 text-neutral-600 '>{description}</p>
       </div>
       {children}
     </>

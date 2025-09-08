@@ -11,7 +11,7 @@ const Header = () => {
       <Button
         variant='outlined'
         background='primary'
-        className='bg-neutral-50 rounded-[36px] text-[14px] py-2 px-4 leading-5 font-semibold font-sans flex items-center gap-2'
+        className='bg-neutral-50 rounded-[36px] text-[14px] py-2 px-4 leading-5 font-semibold  flex items-center gap-2'
         onClick={() => navigate('/')}
       >
         <Home2 size='24' /> ホームに戻る
@@ -21,7 +21,7 @@ const Header = () => {
         <div className='relative'>
           <Button className='flex items-center gap-3 py-2 px-6 rounded-3xl'>
             <img src='/assets/icons/japan_rectangle.svg' alt='japan-flag' />
-            <span className='text-xl font-semibold text-white font-heading'>日本語</span>
+            <h2 className='text-xl font-semibold text-white '>日本語</h2>
           </Button>
         </div>
       </div>
