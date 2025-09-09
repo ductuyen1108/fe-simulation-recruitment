@@ -43,6 +43,14 @@ export default function Router() {
         {
           path: 'message',
           element: <ListMessages />
+        },
+        {
+          path: 'personality-type',
+          element: <>personality-type</>
+        },
+        {
+          path: 'aptitude-test',
+          element: <>aptitude-test</>
         }
       ]
     }

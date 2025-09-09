@@ -29,10 +29,10 @@
   --color-mbti-purple: #88619a;
   --color-mbti-red: #f25e62;
 
-  --color-system-success: #1C9C8C;
-  --color-system-alert: #FE4E52;
-  --color-system-warning: #E18528;
-  --color-system-info: #26A9F1;
+  --color-system-success: #1c9c8c;
+  --color-system-alert: #fe4e52;
+  --color-system-warning: #e18528;
+  --color-system-info: #26a9f1;
 
   /* Font family */
   --font-heading: 'Funnel Display', sans-serif;
@@ -77,7 +77,6 @@
 }
 
 @layer components {
-
   /* Button  */
   /* Contained */
   .btn-contained-primary {
@@ -152,5 +151,32 @@
 
   .custom-radio:checked::after {
     @apply scale-100;
+  }
+}
+
+@layer utilities {
+  .scroll-stable {
+    scrollbar-gutter: stable both-edges;
+  }
+  .scrollbar-thin {
+    scrollbar-width: thin;
+  }
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: rgba(17, 24, 39, 0.35);
+    border-radius: 9999px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-hide {
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 }

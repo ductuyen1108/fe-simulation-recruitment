@@ -1,4 +1,4 @@
-import { useState, type ReactNode } from 'react'
+import { useState, type HTMLAttributes, type ReactNode } from 'react'
 import clsx from 'clsx'
 import { ArrowDown2 } from 'iconsax-reactjs'
 
@@ -6,18 +6,18 @@ type AccordionProps = {
   title: string
   children: ReactNode
   defaultOpen?: boolean
-}
+} & HTMLAttributes<HTMLDivElement>
 
-const Accordion = ({ title, children, defaultOpen = false }: AccordionProps) => {
+const Accordion = ({ title, children, defaultOpen = false, ...props }: AccordionProps) => {
   const [open, setOpen] = useState(defaultOpen)
 
   return (
-    <div className='space-y-2'>
+    <div className='space-y-2' {...props}>
       <button
         className='w-full flex justify-between items-center text-left cursor-pointer'
         onClick={() => setOpen(!open)}
       >
-        <span className='text-[14px] leading-5  font-semibold text-neutral-600'>{title}</span>
+        <span className='text-[14px] leading-5 font-semibold text-neutral-600'>{title}</span>
         <ArrowDown2
           size={20}
           className={clsx('transition-transform duration-300', open && 'rotate-180')}
@@ -31,7 +31,7 @@ const Accordion = ({ title, children, defaultOpen = false }: AccordionProps) => 
         )}
       >
         <div className='overflow-hidden'>
-          <div className='pt-2 text-sm text-neutral-600'>{children}</div>
+          <div className='pt-4 text-neutral-600'>{children}</div>
         </div>
       </div>
     </div>

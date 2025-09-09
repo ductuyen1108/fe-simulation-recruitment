@@ -26,7 +26,7 @@ const Modal = ({ title, leftTitle, children, open, onClose }: ModalProps) => {
   if (!open) return null
 
   return createPortal(
-    <div className='fixed inset-0 z-50 flex items-center justify-center' onClick={onClose}>
+    <div className='fixed inset-0 z-150 flex items-center justify-center' onClick={onClose}>
       <div className='absolute inset-0 bg-black/40 backdrop-blur-[1px] flex items-center justify-center h-screen w-screen'>
         <div
           onClick={(e) => e.stopPropagation()}
