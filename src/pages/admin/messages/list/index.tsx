@@ -1,5 +1,5 @@
 import HeaderListMessages from './components/HeaderListMessages'
-import CollapsibleTable, { type Column } from '@/common/components/admin/CollapsibleTable'
+import ListMessageTable, { type Column } from '@/common/components/admin/ListMessageTable'
 import ChatThread, { type ChatMessage } from '@/common/components/admin/ChatThread'
 
 type Row = {
@@ -388,7 +388,7 @@ const ListMessages = () => {
   return (
     <div>
       <HeaderListMessages />
-      <CollapsibleTable
+      <ListMessageTable
         columns={columns}
         rows={rows}
         stickyHeader={true}

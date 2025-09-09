@@ -24,7 +24,7 @@ export default function TextField({
   return (
     <div className='flex flex-col gap-1'>
       {label}
-      <div className='relative flex items-center'>
+      <div className='relative flex items-center bg-white'>
         {startIcon && <span className='absolute left-3 text-gray-400 pointer-events-none'>{startIcon}</span>}
         <input
           {...(register ? register(name) : {})}

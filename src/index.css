@@ -77,6 +77,7 @@
 }
 
 @layer components {
+
   /* Button  */
   /* Contained */
   .btn-contained-primary {
@@ -155,26 +156,38 @@
 }
 
 @layer utilities {
+
+  /* Text gradient  */
+  .text-gradient {
+    @apply bg-linear-270 from-salmon to-yellow inline-block text-transparent bg-clip-text
+  }
+
+  /* Scroll  */
   .scroll-stable {
     scrollbar-gutter: stable both-edges;
   }
+
   .scrollbar-thin {
     scrollbar-width: thin;
   }
+
   .scrollbar-thin::-webkit-scrollbar {
     width: 8px;
     height: 8px;
   }
+
   .scrollbar-thin::-webkit-scrollbar-thumb {
     background: rgba(17, 24, 39, 0.35);
     border-radius: 9999px;
   }
+
   .scrollbar-thin::-webkit-scrollbar-track {
     background: transparent;
   }
 
   .scrollbar-hide {
     scrollbar-width: none;
+
     &::-webkit-scrollbar {
       display: none;
     }

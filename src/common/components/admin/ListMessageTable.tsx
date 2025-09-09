@@ -15,7 +15,7 @@ export type Column<T> = {
   width?: string | number
 }
 
-type CollapsibleTableProps<T> = {
+type ListMessageTableProps<T> = {
   columns: Column<T>[]
   rows: T[]
   renderExpand?: (row: T, rowIndex: number) => React.ReactNode
@@ -32,7 +32,7 @@ const alignToClass: Record<Align, string> = {
   right: 'text-right'
 }
 
-function CollapsibleTable<T>({
+function ListMessageTable<T>({
   columns,
   rows,
   renderExpand,
@@ -40,7 +40,7 @@ function CollapsibleTable<T>({
   getRowKey = (_row, i) => i,
   stickyHeader = false,
   rowsPerPage = 7
-}: CollapsibleTableProps<T>) {
+}: ListMessageTableProps<T>) {
   const [expanded, setExpanded] = useState<Set<string | number>>(() => new Set(defaultExpandedKeys))
   const [currentPage, setCurrentPage] = useState(1)
 
@@ -60,6 +60,8 @@ function CollapsibleTable<T>({
       return next
     })
   }
+
+  const [firstColumn, ...restColumns] = columns
 
   const headers = useMemo(
     () =>
@@ -82,7 +84,7 @@ function CollapsibleTable<T>({
 
   return (
     <div>
-      <div className='scroll-stable scrollbar-thin overflow-x-auto overflow-y-auto max-h-[60vh] overscroll-y-auto'>
+      <div className='scroll-stable scrollbar-thin overflow-x-auto overflow-y-auto max-h-[50vh] overscroll-y-auto'>
         <div className={'bg-white rounded-lg shadow min-h-fit'}>
           <table className='w-full table-auto'>
             <thead>
@@ -108,9 +110,25 @@ function CollapsibleTable<T>({
                 return (
                   <React.Fragment key={key}>
                     <tr className='border-b border-[#E9EAEB] hover:bg-gray-50'>
-                      {columns.map((c, ci) => (
-                        <td key={ci} className={clsx('p-3', alignToClass[c.align ?? 'left'], c.cellClassName)}>
-                          {c.render ? c.render(row, rowIndex) : c.accessor ? (row[c.accessor] as any) : null}
+                      <td className={clsx('p-3')}>
+                        <div className='w-5 h-5 flex items-center justify-center text-white rounded-full bg-gradient-to-r from-salmon to-yellow'>
+                          {firstColumn.render
+                            ? firstColumn.render(row, rowIndex)
+                            : firstColumn.accessor
+                            ? (row[firstColumn.accessor] as any)
+                            : null}
+                        </div>
+                      </td>
+                      {restColumns.map((column, index) => (
+                        <td
+                          key={index}
+                          className={clsx('p-3', alignToClass[column.align ?? 'left'], column.cellClassName)}
+                        >
+                          {column.render
+                            ? column.render(row, rowIndex)
+                            : column.accessor
+                            ? (row[column.accessor] as any)
+                            : null}
                         </td>
                       ))}
                       {renderExpand && (
@@ -190,4 +208,4 @@ function CollapsibleTable<T>({
   )
 }
 
-export default CollapsibleTable
+export default ListMessageTable

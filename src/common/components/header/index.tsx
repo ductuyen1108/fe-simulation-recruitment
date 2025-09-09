@@ -5,8 +5,8 @@ import { NavLink } from 'react-router-dom'
 
 const Header = () => {
   return (
-    <div className='sticky z-[100] top-0 h-[72px] bg-white shadow-[0_0_10px_rgba(29,36,50,.1)]'>
-      <div className='max-w-[1248px] mx-auto py-3 px-2.5 flex justify-between items-center'>
+    <div className='sticky z-[100] top-0 h-[72px] bg-white shadow-[0_0_10px_rgba(29,36,50,.1)] flex items-center'>
+      <div className='max-w-[1248px] w-full mx-auto py-3 px-2.5 flex justify-between items-center'>
         <NavLink to={'/'} className='text-[18px] font-semibold '>
           LOGO
         </NavLink>

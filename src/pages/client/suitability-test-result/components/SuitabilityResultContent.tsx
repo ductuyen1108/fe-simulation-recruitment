@@ -2,6 +2,7 @@ import PersonalScores from './PersonalScores'
 import TopCoreSkills from './TopCoreSkills'
 import SuitabilityResultItem from './items/SuitabilityResultItem'
 import StickyControl from './StickyControl'
+import YourJobs from './YourJobs'
 
 const SuitabilityResultContent = () => {
   return (
@@ -44,6 +45,7 @@ const SuitabilityResultContent = () => {
           title='あなたの個人的なホランドコード'
           description='特定のタイプをどれだけ強く好むかによって、あなただけのホランドコードを作ることができます。最も好むタイプの頭文字を取って作ります。あなたの場合は、A、I、Cです。そうすると、あなただけのホランドコードはAIC、AI、IA、あるいはIACのいずれかになります。'
         />
+        <YourJobs />
         <SuitabilityResultItem
           title='コアスキル'
           description={

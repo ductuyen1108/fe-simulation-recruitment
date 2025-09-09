@@ -1,8 +1,7 @@
 import { useClickOutside } from '@/common/hooks/useClickOutside'
 import clsx from 'clsx'
-import { Edit2, More } from 'iconsax-reactjs'
+import { CloseCircle, More, TickCircle } from 'iconsax-reactjs'
 import { useRef, useState } from 'react'
-import TextField from '../form/TextField'
 
 export type ChatMessage = {
   id: string | number
@@ -74,22 +73,23 @@ function MessageRow({
               <div className='flex items-center gap-2'>
                 <img src='/assets/avatars/nicole.svg' alt='' className='w-4 h-4 rounded-full' />
                 {isEditing ? (
-                  // Hiển thị input khi đang chỉnh sửa
-                  <div className='relative flex items-center'>
-                    <input
-                      type='text'
-                      value={editedContent}
-                      onChange={(e) => setEditedContent(e.target.value)}
-                      onKeyDown={(e) => {
-                        if (e.key === 'Enter') handleSaveEdit()
-                        if (e.key === 'Escape') handleCancelEdit()
-                      }}
-                      className='text-xs text-neutral-600 py-1 px-2 bg-neutral-50 rounded-[4px] border border-neutral-300 pr-8 focus:outline-none'
-                    />
-                    <Edit2 size='16' className='absolute right-2 cursor-pointer' onClick={handleSaveEdit} />
+                  <div className='flex items-center gap-2'>
+                    <div className='relative flex items-center'>
+                      <input
+                        type='text'
+                        value={editedContent}
+                        onChange={(e) => setEditedContent(e.target.value)}
+                        onKeyDown={(e) => {
+                          if (e.key === 'Enter') handleSaveEdit()
+                          if (e.key === 'Escape') handleCancelEdit()
+                        }}
+                        className='text-xs text-neutral-600 py-1 px-2 rounded-[4px] border border-neutral-300 focus:outline-none'
+                      />
+                    </div>
+                    <TickCircle size='20' color='#1c9c8c' className='cursor-pointer' onClick={handleSaveEdit} />
+                    <CloseCircle size='20' color='#818898' className='cursor-pointer' onClick={handleCancelEdit} />
                   </div>
                 ) : (
-                  // Hiển thị nội dung tin nhắn bình thường
                   <span className='text-xs text-neutral-600 py-1 px-2 bg-neutral-50 rounded-[4px]'>{msg.content}</span>
                 )}
               </div>
@@ -99,18 +99,21 @@ function MessageRow({
             <div className='flex flex-col'>
               <div className='flex items-center gap-2'>
                 {isEditing ? (
-                  // Hiển thị input khi đang chỉnh sửa
-                  <div className='relative flex items-center'>
-                    <TextField
-                      name='msg'
-                      value={editedContent}
-                      onChange={(e) => setEditedContent(e.target.value)}
-                      onKeyDown={(e) => {
-                        if (e.key === 'Enter') handleSaveEdit()
-                        if (e.key === 'Escape') handleCancelEdit()
-                      }}
-                      endIcon={<Edit2 size={16} />}
-                    />
+                  <div className='flex items-center gap-2'>
+                    <TickCircle size='20' color='#1c9c8c' className='cursor-pointer' onClick={handleSaveEdit} />
+                    <CloseCircle size='20' color='#818898' className='cursor-pointer' onClick={handleCancelEdit} />
+                    <div className='relative flex items-center'>
+                      <input
+                        type='text'
+                        value={editedContent}
+                        onChange={(e) => setEditedContent(e.target.value)}
+                        onKeyDown={(e) => {
+                          if (e.key === 'Enter') handleSaveEdit()
+                          if (e.key === 'Escape') handleCancelEdit()
+                        }}
+                        className='text-xs text-neutral-600 py-1 px-2 rounded-[4px] border border-neutral-300 focus:outline-none'
+                      />
+                    </div>
                   </div>
                 ) : (
                   <span className='text-xs text-neutral-600 py-1 px-2 bg-neutral-50 rounded-[4px]'>{msg.content}</span>
