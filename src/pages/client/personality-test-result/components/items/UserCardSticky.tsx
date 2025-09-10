@@ -1,5 +1,5 @@
-import Button from '@/common/components/Button'
-import Modal from '@/common/components/Modal'
+import Button from '@/components/Button'
+import Modal from '@/components/Modal'
 import { ExportCurve, Facebook, Sms, Unlock } from 'iconsax-reactjs'
 import { useState } from 'react'
 import { Link } from 'react-scroll'

@@ -1,5 +1,5 @@
 import { Link } from 'react-router'
-import { useSidebar } from '../../context/SidebarContext'
+import { useSidebar } from '../../common/context/SidebarContext'
 import { Grid4, GridEdit, MessageQuestion, Sms } from 'iconsax-reactjs'
 import type { ReactNode } from 'react'
 import NavItem from './NavItem'

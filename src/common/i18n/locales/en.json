@@ -1,0 +1,107 @@
+{
+  "header": {
+    "menu": [
+      { "label": "Personality Test", "link": "" },
+      { "label": "Personality Types", "link": "/personality-test" },
+      { "label": "Aptitude Test", "link": "/suitability-test" }
+    ],
+    "search": "Search",
+    "login": {
+      "title": "Login",
+      "desc": "Not a member yet? Take our personality test or enter your results to create your free profile.",
+      "emailLabel": "Learn more about your personality type",
+      "passwordLable": "Password",
+      "password": "Password",
+      "forgotPassword": "Forgot your password?"
+    },
+    "language": {
+      "label": "English",
+      "code": "en"
+    },
+    "logout": "Logout",
+    "settings": "Settings"
+  },
+  "footer": {
+    "products": {
+      "title": "Products",
+      "items": [
+        { "label": "Premium Profile" },
+        { "label": "Team Assessment" },
+        { "label": "Reports for Professionals" },
+        { "label": "Customer Voices" }
+      ]
+    },
+    "resources": {
+      "title": "Resources",
+      "items": [
+        { "label": "Personality Test" },
+        { "label": "Personality Types" },
+        { "label": "Articles" },
+        { "label": "Our Framework" },
+        { "label": "International Profiles" }
+      ]
+    },
+    "help": {
+      "title": "Help",
+      "items": [
+        { "label": "Contact Us" },
+        { "label": "FAQ" },
+        { "label": "Change Language" }
+      ]
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "“I finally feel understood about myself”",
+      "description": "In just 10 minutes, you can gain an amazingly accurate explanation about what kind of person you are, and the reasons behind your attitudes and behaviors.",
+      "textBtn": "Personality Types",
+      "resultDesc": "Results rated as accurate or very accurate",
+      "todayTests": "Tests Taken Today",
+      "japanTests": "Tests Taken in Japan",
+      "totalTests": "Total Tests Taken"
+    },
+    "understandOthers": {
+      "label": "Personality Types",
+      "title": "Understand Others",
+      "description": "Our free type descriptions help you learn what drives, stimulates, and concerns different personality types, and support you in building more meaningful relationships.",
+      "textBtn": "Personality Types"
+    },
+    "team": {
+      "label": "Team",
+      "title": "Understand Others",
+      "description": "Deepen your team understanding with our team assessments. Improve communication, create harmony, and help team members grow their individual strengths. Works for teams of any size.",
+      "textBtn": "Team Assessment"
+    },
+    "userFeedbacks": {
+      "label": "Testimonials",
+      "title": "See What Others Say",
+      "list": [
+        {
+          "name": "Benny",
+          "type": "Architect (INTJ-A)",
+          "feedback": "Incredibly thorough and even a little frightening. It feels like someone is holding a mirror up to my mind, showing me my true self whether I like it or not."
+        },
+        {
+          "name": "Nicole",
+          "type": "Advocate (INFJ-T)",
+          "feedback": "Wow! This site is amazing! I took the test and the results were so accurate—it felt like my true self was finally validated. It was as if someone finally understood me, and I realized I’m not a weirdo after all."
+        },
+        {
+          "name": "Caroline",
+          "type": "Defender (ISFJ-A)",
+          "feedback": "Reading this profile makes me feel comforted, excited, inspired, and a little amazed! Having my strengths and weaknesses described so clearly is truly wonderful."
+        },
+        {
+          "name": "Marta",
+          "type": "Commander (ENTJ-A)",
+          "feedback": "I’m so glad to read an article that describes me so well… and even more relieved to know I’m not strange! I never thought a profile could be this accurate."
+        },
+        {
+          "name": "Melody",
+          "type": "Advocate (INFJ-T)",
+          "feedback": "Everything finally clicked into place. It’s like I was freed from inner chains and could breathe again. I rediscovered a part of myself, a passion I had forgotten years ago."
+        }
+      ]
+    }
+  }
+}

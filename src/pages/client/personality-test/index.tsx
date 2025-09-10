@@ -1,5 +1,5 @@
 import HeroSection from './components/HeroSection'
-import SocialsSection from '@/common/components/SocialsSection'
+import SocialsSection from '@/components/SocialsSection'
 import PersonalityForm from './components/PersonalityForm'
 
 const PersonalityTest = () => {

@@ -1,4 +1,4 @@
-import Divider from '@/common/components/Divider'
+import Divider from '@/components/Divider'
 import CheckItem from './CheckItem'
 import { Controller, type Control } from 'react-hook-form'
 import { optionsCheckItem } from '../constants'

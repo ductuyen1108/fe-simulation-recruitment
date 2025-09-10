@@ -1,6 +1,6 @@
 import HeaderListMessages from './components/HeaderListMessages'
-import ListMessageTable, { type Column } from '@/common/components/admin/ListMessageTable'
-import ChatThread, { type ChatMessage } from '@/common/components/admin/ChatThread'
+import ListMessageTable, { type Column } from '@/components/admin/ListMessageTable'
+import ChatThread, { type ChatMessage } from '@/components/admin/ChatThread'
 
 type Row = {
   numberNoti: number

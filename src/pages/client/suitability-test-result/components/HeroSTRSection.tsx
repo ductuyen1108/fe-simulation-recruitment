@@ -1,5 +1,5 @@
-import Button from '@/common/components/Button'
-import IconButton from '@/common/components/IconButton'
+import Button from '@/components/Button'
+import IconButton from '@/components/IconButton'
 import { ExportCurve, Sms } from 'iconsax-reactjs'
 
 const HeroSTRSection = () => {

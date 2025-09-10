@@ -1,4 +1,4 @@
-import Button from '@/common/components/Button'
+import Button from '@/components/Button'
 import { Send2 } from 'iconsax-reactjs'
 import TraitBar from '../items/TraitBar'
 import { Element, Link } from 'react-scroll'

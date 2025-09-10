@@ -1,6 +1,6 @@
 import PersonalityResults from './components/personality-results'
 import HeroPTRSection from './components/HeroPTRSection'
-import SocialsSection from '@/common/components/SocialsSection'
+import SocialsSection from '@/components/SocialsSection'
 
 const PersonalityTestResult = () => {
   return (

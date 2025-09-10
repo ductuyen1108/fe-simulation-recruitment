@@ -1,4 +1,4 @@
-import Button from '@/common/components/Button'
+import Button from '@/components/Button'
 import { ArrowRight } from 'iconsax-reactjs'
 import { Element } from 'react-scroll'
 

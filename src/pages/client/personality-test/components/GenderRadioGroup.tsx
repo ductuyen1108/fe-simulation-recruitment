@@ -1,6 +1,6 @@
 // src/pages/personality-test/components/GenderRadioGroup.tsx
 import type { Control, FieldValues, Path } from 'react-hook-form'
-import RadioGroupField from '@/common/components/form/Radio'
+import RadioGroupField from '@/components/form/Radio'
 
 type Props<T extends FieldValues> = {
   name: Path<T>

@@ -1,12 +1,12 @@
 import { NavLink } from 'react-router-dom'
 import { ArrowRight, CloseCircle } from 'iconsax-reactjs'
-import Button from '../Button'
 import SearchButton from './SearchButton'
 import clsx from 'clsx'
 import Accordion from '../Accordion'
 import Divider from '../Divider'
 import { useMediaQuery } from '@/common/hooks/useMediaQuery'
 import { createPortal } from 'react-dom'
+import { Button } from '../ui/button'
 
 type DrawerProps = {
   open: boolean
@@ -89,18 +89,12 @@ const Drawer = ({ open, onClose }: DrawerProps) => {
         )}
         onClick={onClose}
       />
-      <div
-        className={clsx(
-          'fixed p-4 top-0 right-0 h-full w-[270px] bg-white shadow-lg z-150 transform transition-transform duration-300 ease-in-out'
-        )}
-      >
+      <div className='fixed p-4 top-0 right-0 h-full w-[270px] bg-white shadow-lg z-150 transform transition-transform duration-300 ease-in-out'>
         <div className='flex justify-between items-center h-[62px]'>
           <Button className='flex items-center gap-2 rounded-[36px] px-4 py-2' onClick={onClose}>
             性格タイプ <ArrowRight size='24' />
           </Button>
-          <button onClick={onClose} className='w-12 h-12 cursor-pointer text-neutral-500'>
-            <CloseCircle size='40' />
-          </button>
+          <CloseCircle className='w-12 h-12 cursor-pointer text-neutral-500' onClick={onClose} />
         </div>
         <div className='flex flex-col gap-4 px-4 mt-2'>
           <Divider />

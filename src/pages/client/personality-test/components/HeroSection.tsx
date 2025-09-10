@@ -1,4 +1,4 @@
-import Container from '@/common/components/Container'
+import Container from '@/components/Container'
 import { stepsPersonalityTest } from '../constants'
 
 type StepItemProps = {

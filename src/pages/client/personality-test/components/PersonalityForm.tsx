@@ -1,6 +1,6 @@
 import QuestItem from './QuestItem'
 import { useForm } from 'react-hook-form'
-import Button from '@/common/components/Button'
+import Button from '@/components/Button'
 import { ArrowRight, ArrowLeft } from 'iconsax-reactjs'
 import { useState, useMemo, useRef, useEffect } from 'react'
 import { personalityQuestionList, QUESTIONS_PER_PAGE } from '../constants'

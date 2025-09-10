@@ -1,5 +1,5 @@
-import Container from '@/common/components/Container'
-import Button from '@/common/components/Button'
+import Container from '@/components/Container'
+import Button from '@/components/Button'
 
 const TeamSection = () => {
   return (

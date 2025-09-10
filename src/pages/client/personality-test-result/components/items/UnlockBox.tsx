@@ -1,4 +1,4 @@
-import Button from '@/common/components/Button'
+import Button from '@/components/Button'
 import { Lock1 } from 'iconsax-reactjs'
 import type { ReactNode } from 'react'
 import { Link } from 'react-scroll'

@@ -1,7 +1,7 @@
-import Button from '@/common/components/Button'
-import Container from '@/common/components/Container'
+import Button from '@/components/Button'
+import Container from '@/components/Container'
 
-const PersonalitySection = () => {
+const UnderstandOthersSection = () => {
   return (
     <div className='rounded-[48px] bg-[#F8F8F8] py-10 md:py-16'>
       <Container>
@@ -33,4 +33,4 @@ const PersonalitySection = () => {
   )
 }
 
-export default PersonalitySection
+export default UnderstandOthersSection

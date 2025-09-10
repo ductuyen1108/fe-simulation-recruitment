@@ -1,5 +1,5 @@
-import SelectField, { type SelectOption } from '@/common/components/form/Select'
-import TextField from '@/common/components/form/TextField'
+import SelectField, { type SelectOption } from '@/components/form/Select'
+import TextField from '@/components/form/TextField'
 import { SearchNormal1 } from 'iconsax-reactjs'
 import { useForm } from 'react-hook-form'
 
