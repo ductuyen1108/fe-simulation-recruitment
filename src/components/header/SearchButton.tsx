@@ -1,6 +1,6 @@
 import { SearchNormal1 } from 'iconsax-reactjs'
 import React, { useState, type ReactNode } from 'react'
-import Modal from '../Modal'
+import Modal from '../ui/modal'
 import TextField from '../form/TextField'
 import Button from '../Button'
 

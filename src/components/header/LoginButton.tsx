@@ -1,4 +1,4 @@
-import Modal from '../Modal'
+import Modal from '../ui/modal'
 import Button from '../Button'
 import TextField from '@/components/form/TextField'
 import { useState } from 'react'
