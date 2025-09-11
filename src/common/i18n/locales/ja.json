@@ -1,16 +1,14 @@
 {
   "header": {
-    "menu": [
-      { "label": "性格テスト", "link": "" },
-      { "label": "性格タイプ", "link": "/personality-test" },
-      { "label": "適性試験", "link": "/suitability-test" }
-    ],
+    "personalityTest": "性格テスト",
+    "personalityType": "性格タイプ",
+    "suitability": "適性試験",
     "search": "検索",
     "login": {
       "title": "ログイン",
       "desc": "まだメンバーではありませんか？当社の性格テストを受けるか、ご自身で結果を入力して、無料プロフィールを作成してください。",
       "emailLabel": "あなたの性格タイプの詳細",
-      "passwordLable": "パスワード",
+      "passwordLabel": "パスワード",
       "password": "パスワード",
       "forgotPassword": "パスワードをお忘れですか？"
     },
@@ -24,30 +22,24 @@
   "footer": {
     "products": {
       "title": "製品",
-      "items": [
-        { "label": "プレミアムプロフィール" },
-        { "label": "チーム評価" },
-        { "label": "専門家向けレポート" },
-        { "label": "お客様の声"}
-      ]
+      "label1": "プレミアムプロフィール",
+      "label2": "チーム評価",
+      "label3": "専門家向けレポート",
+      "label4": "お客様の声"
     },
     "resources": {
       "title": "リソース",
-      "items": [
-        { "label": "性格テスト" },
-        { "label": "性格タイプ" },
-        { "label": "記事"},
-        { "label": "私たちのフレームワーク" },
-        { "label": "国際プロフィール" }
-      ]
+      "label1": "性格テスト",
+      "label2": "性格タイプ",
+      "label3": "記事",
+      "label4": "私たちのフレームワーク",
+      "label5": "国際プロフィール"
     },
     "help": {
       "title": "ヘルプ",
-      "items": [
-        { "label": "お問い合わせ"},
-        { "label": "よくある質問"},
-        { "label": "言語を変更"}
-      ]
+      "label1": "お問い合わせ",
+      "label2": "よくある質問",
+      "label3": "言語を変更"
     }
   },
   "home": {

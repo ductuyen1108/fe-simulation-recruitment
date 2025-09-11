@@ -3,13 +3,13 @@ import SearchButton from './SearchButton'
 import { useRef, useState } from 'react'
 import { useClickOutside } from '@/common/hooks/useClickOutside'
 import Drawer from './Drawer'
-import { useTranslation } from 'react-i18next'
+import { useI18n } from '@/common/lib/i18n'
 
 const MobileMenu = () => {
   const [openDropdown, setOpenDropdown] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
   useClickOutside(dropdownRef, () => setOpenDropdown(false))
-  const { t } = useTranslation()
+  const { t } = useI18n()
 
   const [openDrawer, setOpenDrawer] = useState(false)
 

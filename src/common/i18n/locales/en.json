@@ -1,16 +1,14 @@
 {
   "header": {
-    "menu": [
-      { "label": "Personality Test", "link": "" },
-      { "label": "Personality Types", "link": "/personality-test" },
-      { "label": "Aptitude Test", "link": "/suitability-test" }
-    ],
+    "personalityTest": "Personality Test",
+    "personalityType": "Personality Types",
+    "suitability": "Suitability Test",
     "search": "Search",
     "login": {
       "title": "Login",
       "desc": "Not a member yet? Take our personality test or enter your results to create your free profile.",
       "emailLabel": "Learn more about your personality type",
-      "passwordLable": "Password",
+      "passwordLabel": "Password",
       "password": "Password",
       "forgotPassword": "Forgot your password?"
     },
@@ -24,30 +22,24 @@
   "footer": {
     "products": {
       "title": "Products",
-      "items": [
-        { "label": "Premium Profile" },
-        { "label": "Team Assessment" },
-        { "label": "Reports for Professionals" },
-        { "label": "Customer Voices" }
-      ]
+      "label1": "Team Assessment",
+      "label2": "Reports for Professionals",
+      "label3": "Customer Voices",
+      "label4": "Premium Profile"
     },
     "resources": {
       "title": "Resources",
-      "items": [
-        { "label": "Personality Test" },
-        { "label": "Personality Types" },
-        { "label": "Articles" },
-        { "label": "Our Framework" },
-        { "label": "International Profiles" }
-      ]
+      "label1": "Personality Test",
+      "label2": "Personality Types",
+      "label3": "Articles",
+      "label4": "Our Framework",
+      "label5": "International Profiles"
     },
     "help": {
       "title": "Help",
-      "items": [
-        { "label": "Contact Us" },
-        { "label": "FAQ" },
-        { "label": "Change Language" }
-      ]
+      "label1": "Contact Us",
+      "label2": "FAQ",
+      "label3": "Change Language"
     }
   },
   "home": {

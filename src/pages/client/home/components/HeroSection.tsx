@@ -1,10 +1,10 @@
 import Button from '@/components/Button'
 import { ArrowRight } from 'iconsax-reactjs'
 import Container from '@/components/Container'
-import { useTranslation } from 'react-i18next'
+import { useI18n } from '@/common/lib/i18n'
 
 const HeroSection = () => {
-  const { t } = useTranslation()
+  const { t } = useI18n()
 
   const testResults = [
     { label: t('home.hero.todayTests'), numberOfResults: '112K+' },

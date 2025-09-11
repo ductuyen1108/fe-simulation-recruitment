@@ -1,10 +1,10 @@
 import SearchButton from './SearchButton'
 import LoginButton from './LoginButton'
 import { Button } from '../ui/button'
-import { useTranslation } from 'react-i18next'
+import { useI18n } from '@/common/lib/i18n'
 
 const DesktopMenu = () => {
-  const { t } = useTranslation()
+  const { t } = useI18n()
   return (
     <div className='hidden md:flex gap-3 items-center'>
       <SearchButton />

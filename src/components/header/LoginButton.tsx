@@ -4,7 +4,7 @@ import TextField from '@/components/form/TextField'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { Lock1, Sms } from 'iconsax-reactjs'
-import { useTranslation } from 'react-i18next'
+import { useI18n } from '@/common/lib/i18n'
 
 type FormValues = {
   email: string
@@ -17,7 +17,7 @@ const LoginButton = () => {
     setOpenModal(false)
   }
 
-  const { t } = useTranslation()
+  const { t } = useI18n()
 
   const {
     register,
